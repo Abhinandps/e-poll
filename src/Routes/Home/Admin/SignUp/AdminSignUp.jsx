@@ -1,91 +1,90 @@
-import React, { useState } from 'react'
-import Button from '../../../../Components/Forms/Button'
-import InputField from '../../../../Components/Forms/InputField'
-import Select from '../../../../Components/Forms/Select'
-
+import {useState} from 'react'
+import Button from '../../../../Components/Form/Button'
+import InputField from '../../../../Components/Form/InputField'
+import Select from '../../../../Components/Form/Select'
 const AdminSignUp = () => {
 
-  const collegelist = [
+  const collageList = [
     {
-      name : "CET",
-      id : 1
+      name: "MEA",
+      id:1
     },
     {
-      name : "CET",
-      id : 2
+      name: "ACE",
+      id:2
     },
     {
-      name : "MGC",
-      id : 3
+      name: "GECI",
+      id:3
     }
   ]
-
-  const [formData,setFormData]=useState(
+  
+  const [formData,setFormData] = useState(
     {
-      name : "",
-      email : "",
-      password : "",
-      college :""
+      name: "",
+      email: "",
+      password: "",
+      collage: ""
     }
-  )
-
-
-
-  const submit = event=> {
-    event.preventDefault();
-
-  }
-
-  const onChange = (key,value) => {
-      setFormData({
-         ...formData,
-         [key]:value
-  })}
+  );
 
   const {
-    name,
-    email,
-    password,
-    college
+     name,
+     email,
+     password,
+     collage
+  } = formData;
 
-  } = formData ;
+  const submit = event=>{
+    event.preventDefault();
+    console.log(formData);
+  }
+  
+  const onChange = (key,value)=>{
+    setFormData({
+      ...formData,
+      [key]: value
+    })
+  }
+
+
+
   return (
     <div className='home-form'>
       <h2>
-        Create Account 
+        Create Account
       </h2>
       <form onSubmit={submit}>
         <InputField
-          label="Name"
-          value={name} 
-          onChange={v=>onChange("name",v)}
-          placeholder="Enter Your Name"
+           Label="Name"
+           value={name}
+           onChange={v=>onChange("name",v)}
+           placeholder="Enter Your Name"
         />
         <InputField
-          label="Email"
-          value={email} 
-          onChange={v=>onChange("email",v)}
-          placeholder="Enter Your Email"
+            value={email}
+            Label="Email"
+            onChange={v=>onChange("email",v)}
+            placeholder="Enter Your Email"
         />
         <InputField
-          label="Password"
-          type="password"
-          value={password} 
-          onChange={v=>onChange("password",v)}
-          placeholder="Enter Your Password"
+            value={password}
+            Label="Password"
+            type="Password"
+            onChange={v=>onChange("password",v)}
+            placeholder="Enter Your Password"
         />
         <Select
-          label="College"
-          value={college} 
-          placeholder="Select College" 
-          options={collegelist}       
+         value={collage.id}
+         onChange={v=>onChange("collage",v)}
+         Label="Collage"
+         placeholder="Select Collage"
+         options={collageList}
         />
         <Button
-          title="Create Account"
-        /> 
+          title="Create Account"/>
       </form>
     </div>
-
   )
 }
 export default AdminSignUp
