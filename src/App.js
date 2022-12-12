@@ -1,5 +1,4 @@
-import './App.css';
-import {Routes,Route} from "react-router-dom"
+import {Routes,Route} from "react-router-dom";
 import Home from './Routes/Home';
 import AdminSignUp from './Routes/Home/Admin/SignUp/AdminSignUp';
 import AdminSignIn from './Routes/Home/Admin/SignIn/AdminSignIn';
@@ -7,6 +6,7 @@ import VoterSignUp from './Routes/Home/Voter/SignUp/VoterSignUp';
 import VoterSignIn from './Routes/Home/Voter/SignIn/VoterSignIn';
 import SignInAndSignUp from './Routes/Home/SignInAndSignUp';
 import HomeLayout from './Routes/Home/Components/HomeLayout';
+import Voter from './Routes/Voter';
 
 
 
@@ -25,6 +25,9 @@ function App() {
       </Route>
       <Route path='/sign-in' element={<SignInAndSignUp path='sign-in'/>} />
       <Route path='/sign-up' element={<SignInAndSignUp path='sign-up'/>} />
+      <Route path='/dashboard'>
+        <Route path='/voter' element={<Voter/>} />
+        </Route>
       </Route>
     </Routes> 
   );

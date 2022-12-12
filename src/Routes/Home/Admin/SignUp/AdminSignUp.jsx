@@ -2,7 +2,6 @@ import {useState} from 'react'
 import Button from '../../../../Components/Form/Button'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
-
 const AdminSignUp = () => {
 
   const collageList = [
@@ -38,6 +37,7 @@ const AdminSignUp = () => {
 
   const submit = event=>{
     event.preventDefault();
+    console.log(formData);
   }
   
   const onChange = (key,value)=>{
@@ -47,7 +47,7 @@ const AdminSignUp = () => {
     })
   }
 
-  console.log(formData);
+
 
   return (
     <div className='home-form'>
