@@ -11,8 +11,8 @@ const SignInAndSignUp = ({path}) => {
 
 return (
   <div>
-    <button onClick={(goTo("admin"))}>Admin</button>
-    <button onClick={(goTo("voter"))}>Voter</button>
+    <button onClick={()=>goTo("admin")}>Admin</button>
+    <button onClick={()=>goTo("voter")}>Voter</button>
   </div>
 )
 }
