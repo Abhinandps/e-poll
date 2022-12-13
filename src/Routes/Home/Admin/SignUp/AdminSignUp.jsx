@@ -87,5 +87,4 @@ const AdminSignUp = () => {
     </div>
   )
 }
-
 export default AdminSignUp
