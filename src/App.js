@@ -7,6 +7,7 @@ import VoterSignIn from './Routes/Home/Voter/SignIn/VoterSignIn';
 import SignInAndSignUp from './Routes/Home/SignInAndSignUp';
 import HomeLayout from './Routes/Home/Components/HomeLayout';
 import Voter from './Routes/Voter';
+import DashboardLayout from "./Routes/Home/Components/DashboardLayout";
 
 
 
@@ -25,10 +26,11 @@ function App() {
       </Route>
       <Route path='/sign-in' element={<SignInAndSignUp path='sign-in'/>} />
       <Route path='/sign-up' element={<SignInAndSignUp path='sign-up'/>} />
-    <Route path='/dashboard'>
+      </Route>
+    <Route path='/dashboard' element={<DashboardLayout/>}>
       <Route path='voter' element={<Voter/>} />
         </Route>
-    </Route>
+   
     </Routes> 
   );
 }
