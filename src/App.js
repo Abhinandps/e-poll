@@ -25,10 +25,10 @@ function App() {
       </Route>
       <Route path='/sign-in' element={<SignInAndSignUp path='sign-in'/>} />
       <Route path='/sign-up' element={<SignInAndSignUp path='sign-up'/>} />
-      <Route path='/dashboard'>
-        <Route path='/voter' element={<Voter/>} />
+    <Route path='/dashboard'>
+      <Route path='voter' element={<Voter/>} />
         </Route>
-      </Route>
+    </Route>
     </Routes> 
   );
 }

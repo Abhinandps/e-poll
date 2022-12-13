@@ -1,10 +1,9 @@
 import avatar from "./../../Assets/Images/avatar.png"
 const CandidatesCard = (
-    name,
+   {name,
     department,
     semester,
-    rollno
-
+    rollno}
 ) =>{
     return(
         <div className="candidates-card">
