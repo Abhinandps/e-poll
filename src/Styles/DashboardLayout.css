@@ -1,0 +1,219 @@
+.dashboard-container {
+ 
+    width: 100%;
+    height: 100vh;
+    /* background-color: whitesmoke; */
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 240px 5fr;
+    grid-template-rows: 80px 5fr;
+}
+
+
+
+.dashboard-topbar-section {
+    
+    background: #fff;
+    box-shadow: 0px 9px 25px -12px rgba(0, 0, 0, 0.25);
+    grid-column: 2/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+.dashboard-topbar-section .topbar-title-section img{
+    display: none;
+}
+
+
+.dashboard-topbar-section .topbar-title-section {
+    display: flex;
+    gap: 20px;
+}
+.dashboard-topbar-section .topbar-title-section h1{
+    display: flex;
+    gap: 20px;
+    color: #8695A0;
+    font-weight: 600;
+    font-size: 25px;
+}
+.dashboard-topbar-section .topbar-title-section img{
+    cursor: pointer;
+}
+
+
+
+.dashboard-topbar-section .topbar-userDetails-section {
+    width: 220px;
+    padding: 0 0 0 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 0.2px solid #a7d3dd;;
+}
+
+.dashboard-topbar-section .topbar-notification {
+    position: relative;
+    background: linear-gradient(180deg, #71D8D2 0%, rgba(31, 93, 106, 0.97) 100%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(2px 3px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.dashboard-topbar-section .topbar-notification img {
+    width: 20px;
+}
+
+.dashboard-topbar-section .topbar-notification .notification-dot::after {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #FF2C55;
+    border: 0.5px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.dashboard-topbar-section .topbar-userDetails-section .topbar-avatar{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.dashboard-topbar-section .topbar-userDetails-section .topbar-avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dashboard-topbar-section .topbar-userDetails-section .topbar-userOptionField{
+    cursor: pointer;
+}
+
+
+
+
+
+.dashboard-sidebar-section {
+    background: linear-gradient(180deg, #3F8291 -7.97%, #3F8290 23.49%, rgba(31, 93, 106, 0.97) 73.54%);
+    grid-column: 1/2;
+    grid-row: 1/3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 56px;
+}
+
+.dashboard-sidebar-section .toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+.dashboard-sidebar-section .dashboard-sidebar-logo {
+    color: #fff;
+    font-size: 30px;
+}
+
+
+.dashboard-sidebar-section .dashboard-sidebar-navigation-menu {
+    width: 100%;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+.dashboard-sidebar-navigation-menu .sidebar-navigation-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 50px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    width: 100%;
+}
+
+
+
+
+.dashboard-sidebar-navigation-menu .parentList {
+    margin-bottom: 5px;
+    padding: 10px 0 10px 40px;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+.active::before {
+    content: '';
+    width: 7px;
+    height: 100%;
+    background: #71D8D2;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.dashboard-sidebar-navigation-menu .childList {
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #CBCBCB;
+}
+
+
+
+.innerContent-section {
+    grid-column: 2/3;
+}
+
+
+@media screen and (max-width:775px) {
+    .dashboard-sidebar-section {
+        display: none;
+    }
+    .dashboard-topbar-section, .innerContent-section {
+        grid-column: 1/3;
+    }
+    .dashboard-topbar-section .topbar-title-section img{
+        display: block;
+    }
+    .dashboard-topbar-section .topbar-userDetails-section .topbar-userDetails{
+        display: none;
+    }
+    .dashboard-topbar-section .topbar-userDetails-section {
+        width: 150px;
+        border:none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
