@@ -1,43 +1,68 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from '../../../../Components/Form/Button'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
+import apiCall from '../../../../Services/apiCall'
 const AdminSignUp = () => {
 
-  const collageList = [
-    {
-      name: "MEA",
-      id:1
-    },
-    {
-      name: "ACE",
-      id:2
-    },
-    {
-      name: "GECI",
-      id:3
-    }
-  ]
-  
+  const  navigate = useNavigate();
+
+  const [collegeList,setCollegeList] = useState([]);
+
   const [formData,setFormData] = useState(
     {
       name: "",
       email: "",
       password: "",
-      collage: ""
+      college: ""
     }
   );
+  
+  const [errorData, setErrorData] = useState({
+      name: "",
+      email: "",
+      password: "",
+      college: ""
+  })
 
   const {
      name,
      email,
      password,
-     collage
+     college
   } = formData;
+  
+  const getCollageList = async()=>{
+    const response = await apiCall("/utils/colleges");
+    setCollegeList(response.data.map(({_id,name})=>({name,id:_id})))
+  }
+  
 
-  const submit = event=>{
+  useEffect(()=>{
+    getCollageList();
+  },[])
+
+  const submit = async event=>{
     event.preventDefault();
-    console.log(formData);
+    setErrorData({
+      name: "",
+      email: "",
+      password: "",
+      college: ""
+    })
+    if(!college){
+      onError("college","Please select a collage")
+      return
+    }
+    const response = await apiCall("/auth/admin-register","POST",formData)
+    if(!response.status){
+      response.data.forEach(({message,path})=>{
+        onError(path,message)
+      })
+      return
+    }
+    navigate("/sign-in")
   }
   
   const onChange = (key,value)=>{
@@ -45,6 +70,13 @@ const AdminSignUp = () => {
       ...formData,
       [key]: value
     })
+  }
+
+  const onError = (key,value)=>{
+    setErrorData(prev=>({
+      ...prev,
+      [key]: value
+    }))
   }
 
 
@@ -60,12 +92,14 @@ const AdminSignUp = () => {
            value={name}
            onChange={v=>onChange("name",v)}
            placeholder="Enter Your Name"
+           error={errorData.name}
         />
         <InputField
             value={email}
             Label="Email"
             onChange={v=>onChange("email",v)}
             placeholder="Enter Your Email"
+            error={errorData.email}
         />
         <InputField
             value={password}
@@ -73,13 +107,15 @@ const AdminSignUp = () => {
             type="Password"
             onChange={v=>onChange("password",v)}
             placeholder="Enter Your Password"
+            error={errorData.password}
         />
         <Select
-         value={collage.id}
-         onChange={v=>onChange("collage",v)}
-         Label="Collage"
-         placeholder="Select Collage"
-         options={collageList}
+         value={college}
+         onChange={v=>onChange("college",v)}
+         Label="College"
+         placeholder="Select College"
+         options={collegeList}
+         error={errorData.college}
         />
         <Button
           title="Create Account"/>

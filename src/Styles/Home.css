@@ -123,5 +123,22 @@
     text-decoration: none;
 }
 
+.home-form{
+    display: grid;
+    place-items: center;
+    padding: 50px
+}
+
+.form-field{
+    padding: 10px;
+    display: grid;
+    width: 100%;
+    max-width: 300px;
+}
+
+.error-field{
+    color: red;
+    font-size: 14px;
+}
 
 

@@ -88,7 +88,7 @@ const Voter = () => {
       <h2>Hello Mia</h2>
      <div className="election-view-section">
          {data.map(position=>
-             <PositionCard {...position}/>
+             <PositionCard {...position} key={position.position}/>
         )
         }
      </div>

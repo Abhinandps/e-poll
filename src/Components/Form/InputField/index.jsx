@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputField = ({Label,placeholder,type="text",onChange,value}) => {
+const InputField = ({Label,placeholder,type="text",onChange,value,error}) => {
   return (
     <div className="form-field">
           <label>
@@ -12,6 +12,7 @@ const InputField = ({Label,placeholder,type="text",onChange,value}) => {
             placeholder={placeholder}
             onChange ={e=>onChange(e.target.value)}
           />
+          <div className='error-field'>{error}</div>
     </div>
   )
 }

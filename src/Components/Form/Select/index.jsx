@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Select = ({Label,placeholder,options,value,onChange}) => {
+const Select = ({Label,placeholder,options,value,onChange,error}) => {
   return (
     <div className="form-field">
           <label>
@@ -19,6 +19,9 @@ const Select = ({Label,placeholder,options,value,onChange}) => {
                  </option>
              )} 
          </select>
+         <div className="error-field">
+          {error}
+         </div>
     </div>
     
   )

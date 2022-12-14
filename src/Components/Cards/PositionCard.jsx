@@ -11,7 +11,7 @@ const PositionCard = ({
         </div>
          <div className="election-candidates-list">
             {candidates.map(candidate=>(
-                <CandidatesCard{...candidate}/>
+                <CandidatesCard{...candidate} key={candidate.name}/>
                 ) 
                 )}            
         </div>
