@@ -7,7 +7,7 @@ import VoterSignIn from './Routes/Home/Voter/SignIn/VoterSignIn';
 import SignInAndSignUp from './Routes/Home/SignInAndSignUp';
 import HomeLayout from './Routes/Home/Components/HomeLayout';
 import Voter from './Routes/Voter';
-import DashboardLayout from "./Routes/Home/Components/DashboardLayout";
+import DashboardLayout from "./Components/Layout/DashboardLayout";
 
 
 
