@@ -1,14 +1,15 @@
-import {useEffect, useState} from 'react'
+import { useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../../../Components/Form/Button'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
 import apiCall from '../../../../Services/apiCall'
+import useCollegeList from '../../../../Hooks/useCollegeList'
 const AdminSignUp = () => {
 
   const  navigate = useNavigate();
 
-  const [collegeList,setCollegeList] = useState([]);
+  const collegeList = useCollegeList();
 
   const [formData,setFormData] = useState(
     {
@@ -33,15 +34,6 @@ const AdminSignUp = () => {
      college
   } = formData;
   
-  const getCollageList = async()=>{
-    const response = await apiCall("/utils/colleges");
-    setCollegeList(response.data.map(({_id,name})=>({name,id:_id})))
-  }
-  
-
-  useEffect(()=>{
-    getCollageList();
-  },[])
 
   const submit = async event=>{
     event.preventDefault();
