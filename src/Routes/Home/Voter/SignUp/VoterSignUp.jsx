@@ -3,21 +3,22 @@ import InputField from '../../../../Components/Form/InputField'
 import Button from '../../../../Components/Form/Button'
 
 import Select from '../../../../Components/Form/Select'
+import useCollegeList from '../../../../Hooks/useCollegeList'
+import apiCall from '../../../../Services/apiCall'
+
+const defaultFormData = {
+  name: "",
+      email: "",
+      password: "",
+      college: "",
+      semester:"",
+      registerNumber:""
+}
+
 const VoterSignUp = () => {
-  const collageList = [
-    {
-      name: "MEA",
-      id:1
-    },
-    {
-      name: "ACE",
-      id:2
-    },
-    {
-      name: "GECI",
-      id:3
-    }
-  ]
+
+  const collegeList = useCollegeList();
+  
   const semesterList = [
     {
       name: "1st sem",
@@ -45,29 +46,35 @@ const VoterSignUp = () => {
     }
   ]
   
-  const [formData,setFormData] = useState(
-    {
-      name: "",
-      email: "",
-      password: "",
-      collage: "",
-      semester:"",
-      regno:""
-    }
-  );
+  const [formData,setFormData] = useState(defaultFormData);
+
+  const [errorData, setErrorData] = useState(defaultFormData)
 
   const {
      name,
      email,
      password,
-     collage,
+     college,
      semester,
-     regno
+     registerNumber
   } = formData;
 
-  const submit = event=>{
+  const submit = async event=>{
     event.preventDefault();
-    console.log(formData);
+    setErrorData(defaultFormData)
+    if(!college){
+      onError("college","Please select a collage")
+      return
+    }
+    const response = await apiCall("/auth/voter-register","POST",formData)
+    if(!response.status){
+      response.data.forEach(({message,path})=>{
+        onError(path,message)
+      })
+      return
+    }
+    
+   
   }
   
   const onChange = (key,value)=>{
@@ -76,6 +83,14 @@ const VoterSignUp = () => {
       [key]: value
     })
   }
+
+  const onError = (key,value)=>{
+    setErrorData(prev=>({
+      ...prev,
+      [key]: value
+    }))
+  }
+
 
 
 
@@ -90,12 +105,14 @@ const VoterSignUp = () => {
            value={name}
            onChange={v=>onChange("name",v)}
            placeholder="Enter Your Name"
+           error={errorData.name}
         />
         <InputField
             value={email}
             Label="Email"
             onChange={v=>onChange("email",v)}
             placeholder="Enter Your Email"
+            error={errorData.email}
         />
         <InputField
             value={password}
@@ -103,27 +120,31 @@ const VoterSignUp = () => {
             type="Password"
             onChange={v=>onChange("password",v)}
             placeholder="Enter Your Password"
+            error={errorData.password}
         />
         <Select
-         value={collage.id}
-         onChange={v=>onChange("collage",v)}
+         value={college}
+         onChange={v=>onChange("college",v)}
          Label="Collage"
          placeholder="Select Collage"
-         options={collageList}
+         options={collegeList}
+         error={errorData.college}
         />
         
         <Select
-         value={semester.id}
+         value={semester}
          onChange={v=>onChange("semester",v)}
          Label="Semester"
          placeholder="Select Semester"
          options={semesterList}
+         error={errorData.semester}
         />
          <InputField
-            value={regno}
+            value={registerNumber}
             Label="Register Number"
-            onChange={v=>onChange("regno",v)}
+            onChange={v=>onChange("registerNumber",v)}
             placeholder="Enter Your Register Number"
+            error={errorData.registerNumber}
         />
         <Button
           title="Create Account"/>

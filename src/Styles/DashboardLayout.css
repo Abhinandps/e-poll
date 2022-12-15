@@ -44,7 +44,7 @@
 
 
 .dashboard-topbar-section .topbar-userDetails-section {
-    width: 220px;
+    width: 170px;
     padding: 0 0 0 20px;
     height: 50px;
     display: flex;
@@ -97,6 +97,63 @@
     cursor: pointer;
 }
 
+
+.topbar-userOptionField img{
+    width: 6px;
+    height: auto;
+}
+
+
+.dropdown-menu{
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 170px;
+    box-shadow: -1px 2px 8px 0px rgb(0 0 0 / 25%);
+    z-index: 777;
+}
+
+
+.dropdown-menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    background:#fff;
+    transform: rotate(45deg);
+  }
+
+  .dropdown-menu.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: .3s ease;
+  }
+  
+  .dropdown-menu.close{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+   transition: .3s ease;
+  }
+
+  .dropdown-menu .dropdownItem .item{
+    display: flex;
+    padding: 10px 20px;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    
+  }
+
+  .dropdown-menu .dropdownItem img,p{
+    color: rgba(10, 4, 60, 0.5);
+  }
 
 
 
@@ -155,6 +212,10 @@
     position: relative;
 }
 
+.dashboard-sidebar-navigation-menu .parentList p{
+    color: #fff;
+}
+
 .active::before {
     content: '';
     width: 7px;
@@ -172,13 +233,25 @@
     margin-left: 10px;
     font-size: 14px;
     letter-spacing: 0.02em;
-    color: #CBCBCB;
 }
+
+.dashboard-sidebar-navigation-menu .childList p{
+    color: #CBCBCB;
+    transition: 0.3s;
+}
+
+.dashboard-sidebar-navigation-menu .childList p:hover{
+    color: #fff;
+}
+
+
+
 
 
 
 .innerContent-section {
     grid-column: 2/3;
+    overflow: scroll;
 }
 
 
@@ -196,7 +269,7 @@
         display: none;
     }
     .dashboard-topbar-section .topbar-userDetails-section {
-        width: 150px;
+        width: 100px;
         border:none;
     }
 
