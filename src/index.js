@@ -5,7 +5,7 @@ import './Styles/Dashboard.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom"
 import './Styles/Home.css'
-import './Styles/SignIn.css'
+import './Styles/UserType.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

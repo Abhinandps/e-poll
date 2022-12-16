@@ -3,22 +3,35 @@ body {
 
 }
 
-.maincontent{
-    display: flex;
+.usertypecontent{
+     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1600px;
-    height: 50vh;
+    align-items: center;
 }
 
-.maintext{
+.usertypetext {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: 500px;
+}
+
+.usertypetext h1{
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    height: 200px;
+}
+
+.usertypetext p{
+    color:white;
 }
 
 .buttoncontainer {
     margin-top: auto;
+    padding-right: 200px;
+    padding-top: 200px;
     
 }
 
@@ -57,4 +70,24 @@ body {
     background: #54CAE2;
 }
 
+.usertypebottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
 
+.usertypebottomcontent{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.usertypebottomcontent h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.usertypebottomcontent p{
+    color: #696969;
+}

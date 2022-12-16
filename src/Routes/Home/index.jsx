@@ -1,19 +1,33 @@
 import { Link } from "react-router-dom"
+import ComputerWireframe from "../../Assets/Images/computerwireframe.png"
+import MonicaVector from "../../Assets/Images/monica.png"
+import MonicaShadow from "../../Assets/Images/monicashadow.png"
 
 const Home = ()=> {
     return (
    
       <>
-        <div className="maincontent">
-          <div>
+        <div className="herocontent">
+          <div className="maintext">
             <h1> Vote For The Future </h1>
-          </div>
-          <div>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
             </p>
           </div>
+          <div className="vector">
+            <div className="computerwireframe">
+              <img src={ComputerWireframe} alt="computerwireframe" />
+            </div>
+            <div className="monica">
+              <img src={MonicaVector} alt="monicavector" />
+              <div className="monicashadow">
+                <img src={MonicaShadow} alt="monicashadow" />
+              </div>
+            </div>
+          </div>
         </div>
+
+        
         
         <div className="bottom">
           <div className="bottomcontent">
@@ -23,12 +37,16 @@ const Home = ()=> {
             </p>
           </div>
           <div className="buttons">
+          <Link to="sign-up">
             <button className="signup">
-              <Link to="sign-up"> Sign Up </Link>
+               Sign Up 
             </button>
+          </Link>
+          <Link to="/sign-in">
             <button className="signin">
-              <Link to="/sign-in"> Sign In </Link>
+               Sign In 
             </button>
+          </Link> 
             
           </div>
         </div>

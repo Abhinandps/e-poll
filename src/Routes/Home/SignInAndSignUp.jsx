@@ -11,11 +11,11 @@ const SignInAndSignUp = ({path}) => {
 
 return (
 
-  <div>
+  <>
 
-    <div className="maincontent">
+    <div className="usertypecontent">
           
-          <div className="maintext">
+          <div className="usertypetext">
             <div>
               <h1> Vote For The Future </h1>
             </div>
@@ -48,20 +48,18 @@ return (
 
         </div>
 
-        
-        
-        <div className="bottom">
-          <div className="bottomcontent">
+        <div className="usertypebottom">
+          <div className="usertypebottomcontent">
             <h2>E-Poll System For College Election </h2>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
             </p>
-          </div>
+          </div>  
         </div>
 
         
 
-  </div>
+  </>
     
 )
 }

@@ -5,21 +5,24 @@
 }
 
 .container {
+    display: grid;
     background-image: url(../Assets/Images/backgroundvector.png) ;
     padding-top: 20px;
     background-repeat: no-repeat; 
     background-size: 2000px 750px;
+    height: 100vh;
+    padding: 50px 75px;
     
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    padding-top: 30px;
+    height: 30px;
+    align-items: center;
 }
 
 .logo {
-    padding-left:75px;
     font-weight: 700;
     font-size: 40px;
     line-height: 60px;
@@ -33,7 +36,6 @@
     color:white;
     gap: 100px;
     font-size: 20px;
-    padding-right: 75px;
 }
 
 .linkactive {
@@ -41,37 +43,60 @@
     text-decoration-color: aquamarine;
     text-underline-offset: 10px;
 }
-.maincontent {
-    margin-top: 150px;
-    padding-left: 75px;
+.herocontent {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.maincontent h1{
-    font-weight: 700;
-    font-size: 60px;
-    color: white;
-}
-
-.maincontent p{
-    color:white;
-}
-
-.bottom {
-    margin-top: 230px;
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.bottomcontent {
-    max-width: 600px;;
-    padding-left: 75px;
+.maintext{
     display: flex;
     flex-direction: column;
-    gap: 10px;;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.maintext h1{
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    height: 200px;
+}
+
+.maintext p{
+    color:white;
+}
+
+.vector {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.monica {
+    display: grid;
+    padding-right: 100px;
+    height: 20vh;
+}
+
+.monicashadow {
+    padding-left: 65px;
+    margin-top: -35px;
+}
+
+
+.bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bottomcontent {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .bottomcontent h2 {
@@ -87,40 +112,35 @@
     display: flex;
     justify-content: space-evenly;
     height: 40px;
-    padding-right: 75px;
-    color : white;
+    color: white;
     gap: 40px;
+    align-items: flex-end;
 }
 
-.buttons .signup {
+.buttons .signup, .signin {
     width: 150px;
     height: 60px;
     background-color: #3F8290;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+}
+
+ .buttons .signup {
+    background-color: #3F8290;
 }
 
 .buttons .signin{
-    width: 150px;
-    height: 60px;
     background-color: #54CAE2;
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: none;
-}
+} 
 
-.buttons .signup a{
+.buttons .signup, .signin {
     color: white;
     font-size: 20px;
     text-decoration: none;
 }
 
-.buttons .signin a{
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-}
 
 .home-form{
     display: grid;
