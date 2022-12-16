@@ -175,6 +175,7 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+    display: none;
 }
 
 
@@ -186,7 +187,7 @@
 
 .dashboard-sidebar-section .dashboard-sidebar-navigation-menu {
     width: 100%;
-    padding-top: 50px;
+    padding-top: 30px;
     overflow: hidden;
 }
 
@@ -204,7 +205,7 @@
 
 
 .dashboard-sidebar-navigation-menu .parentList {
-    margin-bottom: 5px;
+    margin:10px 0;
     padding: 10px 0 10px 40px;
     width: 100%;
     color: #fff;
@@ -256,9 +257,25 @@
 
 
 @media screen and (max-width:775px) {
-    .dashboard-sidebar-section {
-        display: none;
+    .dashboard-sidebar-section .toggle-button {
+        display: block;
     }
+    
+    .dashboard-sidebar-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 45px 15px 15px 0px;
+        transform: translateX(-100%);
+        transform-origin: left;
+        transition: 0.3s transform;
+        z-index: 666;
+    }
+    .dashboard-sidebar-section-active{
+        transform: translateX(0%);
+    }
+
     .dashboard-topbar-section, .innerContent-section {
         grid-column: 1/3;
     }
