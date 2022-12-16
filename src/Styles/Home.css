@@ -43,7 +43,6 @@
 }
 .maincontent {
     margin-top: 150px;
-    max-width: 500px;
     padding-left: 75px;
     display: flex;
     flex-direction: column;
