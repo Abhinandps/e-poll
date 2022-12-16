@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom'
 const HomeLayout = () => {
   return (
     <div className="container">
-    <div className="header">
-      <div className="logo">
-        LOGO
-      </div>
+      <div className="header">
+        <div className="logo">
+         LOGO
+       </div>
       <div className="navigationbar">
         <div className="linkactive">
           Home
@@ -22,9 +22,9 @@ const HomeLayout = () => {
           Service
         </div>
       </div>
-    </div>
-      <Outlet/>
       </div>
+      <Outlet/>
+    </div>
   )
 }
 
