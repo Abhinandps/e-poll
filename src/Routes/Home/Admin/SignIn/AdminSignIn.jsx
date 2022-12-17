@@ -41,8 +41,8 @@ const submit = async event=>{
 }
 
   return (
-
-    <div className='login-form'>
+    <div className='form-wrap'>
+    <div className='home-form'>
     <h2>
       Welcome Admin
     </h2>
@@ -67,6 +67,7 @@ const submit = async event=>{
 <Button
           title="SignUp"/>
    </form>
+   </div>
    </div>
   )
 }

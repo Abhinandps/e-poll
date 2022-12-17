@@ -74,6 +74,7 @@ const AdminSignUp = () => {
 
 
   return (
+    <div className='form-wrap'>
     <div className='home-form'>
       <h2>
         Create Account
@@ -112,6 +113,7 @@ const AdminSignUp = () => {
         <Button
           title="Create Account"/>
       </form>
+    </div>
     </div>
   )
 }

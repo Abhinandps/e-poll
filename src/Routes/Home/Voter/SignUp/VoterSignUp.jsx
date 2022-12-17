@@ -95,6 +95,7 @@ const VoterSignUp = () => {
 
 
   return (
+    <div className='form-wrap'> 
     <div className='home-form'>
       <h2>
         Create Account
@@ -150,6 +151,7 @@ const VoterSignUp = () => {
           title="Create Account"/>
       </form>
     </div>
+    </div>   
   )
 }
 

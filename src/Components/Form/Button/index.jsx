@@ -2,11 +2,13 @@ import React from 'react'
 
 const Button = ({title}) => {
   return (
-    <button
+    <div className='button-wrap'>
+    <button className='form-button'
       type='submit'
     >
         {title}
     </button>
+    </div>
   )
 }
 
