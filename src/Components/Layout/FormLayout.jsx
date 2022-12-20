@@ -13,9 +13,7 @@ const FormLayout = ({ title, children }) => {
                     {children}
                 </div>
             </div>
-            <div className="button-section">
-              <Button type='button' title="Next"/>
-            </div>
+           
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import PositionCard from "../../Components/Cards/PositionCard"
 const Voter = () => {
+    
     const data = [
         {
             position: 'Chairman',
@@ -83,6 +84,8 @@ const Voter = () => {
         }
 
     ]
+
+
     return (
         <div className="dashboard-main">
             <div className="election-header-section">

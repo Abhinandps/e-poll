@@ -2,7 +2,7 @@
 
 .form-container{
     max-width: 90%;
-    height:50vh;
+    min-height:60vh;
     background: #fff;
     margin: 50px auto;
     border-radius:10px ;
@@ -29,5 +29,11 @@
 }
 
 .button-section{
-   width: 100px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.button-section .btn{
+    width: 80px;
 }
