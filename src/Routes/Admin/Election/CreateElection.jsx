@@ -1,15 +1,40 @@
 import React from 'react'
+import InputField from '../../../Components/Form/InputField'
 import FormLayout from '../../../Components/Layout/FormLayout'
+
+const Checkbox = ({ label }) => {
+  return (
+    <div className="checkbox-wrapper">
+      <label>
+        <input className="box" type="checkbox"  />
+        <span>{label}</span>
+      </label>
+    </div>
+  );
+};
 
 const CreateElection = ({title}) => {
   return (
-
     <>
     <FormLayout title={title}>
-      Contents
+    <form>
+    <InputField
+     Label="Election Name"
+     placeholder="Enter election name"
+     />
+    <h2>Select Available Positions</h2> 
+    <div className='wrap'>
+    <Checkbox label="Chairman" />
+    <Checkbox label="Vice-Chairman" />
+    <Checkbox label="General Secratary" />
+    <Checkbox label="Magazine Editor" />
+    <Checkbox label="Arts club Secratary" />
+    <Checkbox label="Secratary of Sports" />
+    <Checkbox label="Ladies Representative" />
+    </div>
+    </form>
     </FormLayout>
     </>
-
   )
 }
 

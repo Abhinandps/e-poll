@@ -8,6 +8,13 @@
     border-radius:10px ;
     box-shadow: 0px -1px 33px -8px rgba(0, 0, 0, 0.2);
 }
+.form-content h2{
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #787878;
+      
+}
 
 .form-header{
     height: 60px;
@@ -15,8 +22,7 @@
     border-radius: 10px 10px 0px 0;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-   
+    align-items: center;  
 }
 
 .form-header h2{
@@ -28,10 +34,26 @@
     padding: 20px 30px;
 }
 
+<<<<<<< HEAD
 .button-section{
    width: 100%;
    display: flex;
    justify-content: center;
+=======
+/* .button-section{
+   display: flex;
+   justify-content: flex-end;
+   width: 100px;
+   align-items: center;
+} */
+
+.form-content .wrap{
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(5,200px);
+    gap: 25px;
+
+>>>>>>> 1fe2da22b0ca7cd6255007bda1741ea40df58297
 }
 
 .button-section .btn{
