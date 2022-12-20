@@ -34,26 +34,19 @@
     padding: 20px 30px;
 }
 
-<<<<<<< HEAD
+
 .button-section{
    width: 100%;
    display: flex;
    justify-content: center;
-=======
-/* .button-section{
-   display: flex;
-   justify-content: flex-end;
-   width: 100px;
-   align-items: center;
-} */
+}
+
 
 .form-content .wrap{
     padding: 25px;
     display: grid;
-    grid-template-columns: repeat(5,200px);
+    grid-template-columns: repeat(4,200px);
     gap: 25px;
-
->>>>>>> 1fe2da22b0ca7cd6255007bda1741ea40df58297
 }
 
 .button-section .btn{

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../../Components/Form/Button';
 import InputField from '../../../Components/Form/InputField'
 import FormLayout from '../../../Components/Layout/FormLayout'
 
@@ -34,6 +35,9 @@ const CreateElection = ({title}) => {
     </div>
     </form>
     </FormLayout>
+    <div className='button-section'>
+    <Button type='button' color="#66BCCF" title="Next"/>
+    </div>
     </>
   )
 }

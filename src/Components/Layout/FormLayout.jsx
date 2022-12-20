@@ -13,7 +13,6 @@ const FormLayout = ({ title, children }) => {
                     {children}
                 </div>
             </div>
-           
         </>
     )
 }
