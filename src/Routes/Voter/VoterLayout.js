@@ -1,9 +1,11 @@
-import React from 'react'
 import DashboardLayout from '../../Components/Layout/DashboardLayout'
 
 import avatar from "../../Assets/Images/avatar.png"
+import useAuth from '../../Hooks/useAuth'
 
 const VoterLayout = () => {
+   
+   useAuth("voter");
 
     const userData = {
         name: "Mia",

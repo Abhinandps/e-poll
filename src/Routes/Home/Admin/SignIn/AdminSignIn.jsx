@@ -2,10 +2,11 @@ import { useState } from 'react'
 import InputField from '../../../../Components/Form/InputField'
 import Button from '../../../../Components/Form/Button'
 import { useNavigate } from 'react-router-dom'
+import apiCall from '../../../../Services/apiCall'
 const AdminSignIn = () => {
 
   const navigate = useNavigate()
-
+  const [error,setError] = useState("");
   const [formData, setFormData] = useState(
     {
       email: "",
@@ -14,11 +15,6 @@ const AdminSignIn = () => {
     }
   );
 
-  const [errorData, setErrorData] = useState({
-    email: "",
-    password: ""
-
-  })
 
   const onChange = (key, value) => {
     setFormData({
@@ -34,11 +30,16 @@ const AdminSignIn = () => {
 
   const submit = async event => {
     event.preventDefault();
-    setErrorData({
-      email: "",
-      password: ""
-
-    })
+    setError("");
+    const response = await apiCall("/auth/admin-login","POST",formData)
+  if(response.status){
+    setError(response.data[0].message);
+    return
+  }
+  localStorage.setItem("token",response.data.token);
+  localStorage.setItem("userType",response.data.userType);
+  console.log(response);
+  navigate("/dashboard/admin")
     console.log(formData);
   }
 
@@ -54,7 +55,6 @@ const AdminSignIn = () => {
             Label="Email"
             onChange={v => onChange("email", v)}
             placeholder="Enter Your Email"
-            error={errorData.email}
           />
           <InputField
             value={password}
@@ -62,8 +62,8 @@ const AdminSignIn = () => {
             type="Password"
             onChange={v => onChange("password", v)}
             placeholder="Enter Your Password"
-            error={errorData.password}
           />
+          <div className="error-field">{error}</div>
           <Button title="Login" />
           <Button title="SignUp" type="button"
             onClick={() => {

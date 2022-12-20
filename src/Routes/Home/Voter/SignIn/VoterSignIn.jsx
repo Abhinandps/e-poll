@@ -1,23 +1,18 @@
 import {useState} from 'react'
 import InputField from '../../../../Components/Form/InputField'
 import Button from '../../../../Components/Form/Button'
+import apiCall from '../../../../Services/apiCall';
+import { useNavigate } from 'react-router-dom';
 const VoterSignIn = () => {
- 
-
-
+ const {error,setError} = useState("");
+ const navigate = useNavigate();
  const [formData,setFormData] = useState(
   {
-    username: "",
+    email: "",
     password: ""
     
   }
 );
-
-const [errorData, setErrorData] = useState({
-  username: "",
-  password: ""
-
-})
 
 const onChange = (key,value)=>{
   setFormData({
@@ -26,18 +21,23 @@ const onChange = (key,value)=>{
   })
 }
 const {
-  username,
+  email,
   password
   
 } = formData;
 
 const submit = async event=>{
   event.preventDefault();
-  setErrorData({
-    username: "",
-    password: ""
-    
-  })
+  setError("");
+  const response = await apiCall("/auth/voter-login","POST",formData)
+  if(response.status){
+    setError(response.data[0].message);
+    return
+  }
+  localStorage.setItem("token",response.data.token);
+  localStorage.setItem("userType",response.data.userType);
+  console.log(response);
+  navigate("/dashboard/voter")
 }
 
   return (
@@ -48,11 +48,10 @@ const submit = async event=>{
     </h2>
     <form onSubmit={submit}>
     <InputField
-    value={username}
-    Label="Username"
-    onChange={v=>onChange("username",v)}
-    placeholder="Enter Your Username"
-    error={errorData.username}
+    value={email}
+    Label="Email"
+    onChange={v=>onChange("email",v)}
+    placeholder="Enter Your Email"
    />
    <InputField
     value={password}
@@ -60,12 +59,13 @@ const submit = async event=>{
     type="Password"
     onChange={v=>onChange("password",v)}
     placeholder="Enter Your Password"
-    error={errorData.password}
   />
-   
+  <div className='error-field'>{error}</div>
 <Button
           title="Login"/>
 <Button
+   onClick={()=>navigate("/voter/sign-up")}
+   type="button"
           title="SignUp"/>
    </form>
    </div>

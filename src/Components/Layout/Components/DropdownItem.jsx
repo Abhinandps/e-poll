@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const DropdownItem = ({ text, color,src }) => {
+const DropdownItem = ({ text, color,src, onClick}) => {
     return (
-        <span className="dropdownItem">
-            <Link className="item" >
+        <span className="dropdownItem" onClick={()=>onClick && onClick()}>
+            <div className="item" >
                 <img src={src}/>
                 <p style={{ color: color }} >{text}</p>
-            </Link>
+            </div>
         </span>
     )
 }

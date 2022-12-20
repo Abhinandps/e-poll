@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import bubbleIcon from "../../Assets/Icons/bubble.svg"
 import arrow from "../../Assets/Icons/toggleArrow.svg"
 import menuBar from "../../Assets/Icons/menuBar.svg"
@@ -12,10 +12,15 @@ import "../../Styles/DashboardLayout.css"
 
 
 const DashboardLayout = ({ userData, data }) => {
-
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [sidebar, setSideBar] = useState(false);
 
+    const onLogout =()=>{
+        localStorage.removeItem("token");
+        localStorage.removeItem("userType");
+        navigate("/");
+    }
 
     return (
         <>
@@ -49,7 +54,7 @@ const DashboardLayout = ({ userData, data }) => {
                 {/* Drop Down Menu Added  */}
                 <div className={`dropdown-menu ${open ? 'open' : 'close'}`}>
                     <DropdownItem src={user} text={"Profile"} />
-                    <DropdownItem src={logout} color={"#FF5C5C"} text={"Sign out"} />
+                    <DropdownItem onClick={onLogout} src={logout} color={"#FF5C5C"} text={"Sign out"} />
                 </div>
 
                 {/* Side Bar  */}

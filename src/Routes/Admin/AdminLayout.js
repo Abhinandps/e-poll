@@ -1,8 +1,10 @@
 import React from 'react'
 import DashboardLayout from '../../Components/Layout/DashboardLayout'
 import avatar from "../../Assets/Images/admin.png"
+import useAuth from '../../Hooks/useAuth'
  
 const AdminLayout = () => {
+    useAuth("admin");
     const userData = {
         name: "Neog",
         status: "Admin",
