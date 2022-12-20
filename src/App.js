@@ -36,7 +36,7 @@ function App() {
       </Route>
       <Route path='/dashboard' element={<AdminLayout/>}>
         <Route path='admin' />
-        <Route path='election' element={<CreateElection title="Create Election" />} />
+        <Route path='create-election' element={<CreateElection title="Create New Election" />} />
       </Route>
 
       
