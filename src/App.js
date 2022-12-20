@@ -7,9 +7,11 @@ import VoterSignIn from './Routes/Home/Voter/SignIn/VoterSignIn';
 import SignInAndSignUp from './Routes/Home/SignInAndSignUp';
 import HomeLayout from './Routes/Home/Components/HomeLayout';
 import Voter from './Routes/Voter';
-import DashboardLayout from "./Components/Layout/DashboardLayout";
+
 import VoterLayout from "./Routes/Voter/VoterLayout";
 import AdminLayout from "./Routes/Admin/AdminLayout";
+
+import CreateElection from "./Routes/Admin/Election/CreateElection";
 
 
 
@@ -34,7 +36,10 @@ function App() {
       </Route>
       <Route path='/dashboard' element={<AdminLayout/>}>
         <Route path='admin' />
+        <Route path='election' element={<CreateElection title="Create Election" />} />
       </Route>
+
+      
 
     </Routes>
   );

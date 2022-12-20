@@ -1,0 +1,33 @@
+
+
+.form-container{
+    max-width: 90%;
+    height:50vh;
+    background: #fff;
+    margin: 50px auto;
+    border-radius:10px ;
+    box-shadow: 0px -1px 33px -8px rgba(0, 0, 0, 0.2);
+}
+
+.form-header{
+    height: 60px;
+    background: #9592A6;
+    border-radius: 10px 10px 0px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+
+.form-header h2{
+    padding-left: 25px;
+    color: #fff;
+    font-size: 20px;
+}
+.form-content{
+    padding: 20px 30px;
+}
+
+.button-section{
+   width: 100px;
+}
