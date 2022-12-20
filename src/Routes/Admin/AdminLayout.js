@@ -22,10 +22,11 @@ const AdminLayout = () => {
             path: "election",
             subMenu: [
                 {
-                    title: "Create Election"
+                    title: "Create Election",
+                    path:"election"
                 },
                 {
-                    title: "View Candidates"
+                    title: "View Candidates",
                 },
             ]
         },
