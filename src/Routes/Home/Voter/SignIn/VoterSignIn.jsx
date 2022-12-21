@@ -4,7 +4,7 @@ import Button from '../../../../Components/Form/Button'
 import apiCall from '../../../../Services/apiCall';
 import { useNavigate } from 'react-router-dom';
 const VoterSignIn = () => {
- const {error,setError} = useState("");
+ const [error,setError] = useState("");
  const navigate = useNavigate();
  const [formData,setFormData] = useState(
   {
@@ -30,7 +30,7 @@ const submit = async event=>{
   event.preventDefault();
   setError("");
   const response = await apiCall("/auth/voter-login","POST",formData)
-  if(response.status){
+  if(!response.status){
     setError(response.data[0].message);
     return
   }

@@ -32,7 +32,7 @@ const AdminSignIn = () => {
     event.preventDefault();
     setError("");
     const response = await apiCall("/auth/admin-login","POST",formData)
-  if(response.status){
+  if(!response.status){
     setError(response.data[0].message);
     return
   }
