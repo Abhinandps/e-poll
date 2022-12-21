@@ -1,44 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../../Components/Form/Button';
 import InputField from '../../../Components/Form/InputField'
 import FormLayout from '../../../Components/Layout/FormLayout'
+import AddCandidates from './AddCandidates';
+import CreateElectionForm from './Components/CreateElectionForm';
 
-const Checkbox = ({ label }) => {
-  return (
-    <div className="checkbox-wrapper">
-      <label>
-        <input className="box" type="checkbox"  />
-        <span>{label}</span>
-      </label>
-    </div>
-  );
-};
 
-const CreateElection = ({title}) => {
+
+const CreateElection = () => {
+
+  const positionList = [
+    "Chairman",
+    "Vice-Chairman",
+    "General Secratary"
+  ].map((name, index) => ({ name, id: index + 1 }))
+
+
+  const [data, setData] = useState({
+    currentPage:1,
+    name: "",
+    positions: [
+      1, 3
+    ]
+  })
+
+  const {name,positions} = data;
+
+
+  const positionsChange = (value, id) => {
+    if (value) {
+      setData(prev => ({
+        ...prev,
+        positions: [...prev.positions, id]
+      }))
+      return
+    }
+    setData(prev => ({
+      ...prev,
+      positions: prev.positions.filter(i => i !== id)
+    }))
+  }
+
+  const submit = (e)=>{
+    e.preventDefault();
+    onChange("currentPage",2)
+    console.log(data);
+  }
+
+  const onChange = (key,value)=>{
+    setData(prev=>({
+      ...prev,
+      [key]:value
+    }))
+  }
+
+
+  const goBack = ()=>{
+    onChange("currentPage",1)
+  }
+  if(data.currentPage === 2)return(
+    <AddCandidates goBack={goBack}/>
+  )
+  
+  
   return (
-    <>
-    <FormLayout title={title}>
-    <form>
-    <InputField
-     Label="Election Name"
-     placeholder="Enter election name"
-     />
-    <h2>Select Available Positions</h2> 
-    <div className='wrap'>
-    <Checkbox label="Chairman" />
-    <Checkbox label="Vice-Chairman" />
-    <Checkbox label="General Secratary" />
-    <Checkbox label="Magazine Editor" />
-    <Checkbox label="Arts club Secratary" />
-    <Checkbox label="Secratary of Sports" />
-    <Checkbox label="Ladies Representative" />
-    </div>
-    </form>
-    </FormLayout>
-    <div className='button-section'>
-    <Button type='button' color="#66BCCF" title="Next"/>
-    </div>
-    </>
+    <CreateElectionForm  
+    submit={submit}
+    {...data}
+    positionsChange={positionsChange}
+    positionList={positionList}
+   
+    onChange={onChange}
+    />
   )
 }
 

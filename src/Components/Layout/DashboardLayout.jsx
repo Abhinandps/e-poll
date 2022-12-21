@@ -66,11 +66,11 @@ const DashboardLayout = ({ userData, data }) => {
 
                     <div className="dashboard-sidebar-navigation-menu">
                         {
-                            data.map((navData) => {
+                            data.map((navData,i) => {
                                
                                 return (
                                     <>
-                                        <NavigationMenu key={navData.id} {...navData} />
+                                        <NavigationMenu key={i} {...navData} />
                                     </>
                                 )
                             })

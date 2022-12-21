@@ -7,7 +7,7 @@ import Select from '../../../Components/Form/Select'
 import FormLayout from '../../../Components/Layout/FormLayout'
 import "../../../Styles/AddCandidate.css"
 
-const AddCandidates = ({ title }) => {
+const AddCandidates = ({goBack}) => {
     const data = [
         {
             position: 'Chairman',
@@ -93,7 +93,7 @@ const AddCandidates = ({ title }) => {
 
     return (
         <>
-            <FormLayout title={title}>
+            <FormLayout title={"Add Candidate"}>
 
                 <div className="candidate-form-container">
                     <div className="form-left-section">
@@ -153,7 +153,7 @@ const AddCandidates = ({ title }) => {
             </div>
             <div className="button-section">
 
-                <Button type='button' title="Prev" />
+                <Button type='button'  title="Prev" onClick={goBack} />
                 <Button type='button' color="#2d7feb" title="Publish" />
             </div>
 
