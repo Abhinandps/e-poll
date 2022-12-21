@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import Button from '../../../Components/Form/Button';
-import InputField from '../../../Components/Form/InputField'
-import FormLayout from '../../../Components/Layout/FormLayout'
 import AddCandidates from './AddCandidates';
 import CreateElectionForm from './Components/CreateElectionForm';
 
@@ -12,7 +9,10 @@ const CreateElection = () => {
   const positionList = [
     "Chairman",
     "Vice-Chairman",
-    "General Secratary"
+    "General Secratary",
+    "Magazine Editor",
+    "Arts club secretary",
+    "Ladies Representative"
   ].map((name, index) => ({ name, id: index + 1 }))
 
 
@@ -20,7 +20,10 @@ const CreateElection = () => {
     currentPage:1,
     name: "",
     positions: [
-      1, 3
+      
+    ],
+    candidatesList:[
+      
     ]
   })
 
@@ -31,13 +34,18 @@ const CreateElection = () => {
     if (value) {
       setData(prev => ({
         ...prev,
-        positions: [...prev.positions, id]
+        positions: [...prev.positions, id],
+        candidatesList: [...prev.candidatesList, {
+          id: id,
+          candidates:[]
+        }]
       }))
       return
     }
     setData(prev => ({
       ...prev,
-      positions: prev.positions.filter(i => i !== id)
+      positions: prev.positions.filter(i => i !== id),
+      candidatesList: prev.candidatesList.filter(data => data.id !== id)
     }))
   }
 
@@ -59,7 +67,16 @@ const CreateElection = () => {
     onChange("currentPage",1)
   }
   if(data.currentPage === 2)return(
-    <AddCandidates goBack={goBack}/>
+    <AddCandidates 
+      goBack={goBack}
+      {...data}
+      candidatesList = {data.candidatesList.map(
+        (data)=>(
+          {...data,name:positionList.find(({id})=>id===data.id).name
+          }
+        ))
+        }
+    />
   )
   
   

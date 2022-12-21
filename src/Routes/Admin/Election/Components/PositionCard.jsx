@@ -1,11 +1,11 @@
 import React from 'react'
 import CandidatesCard from './CandidatesCard'
 
-const PositionCard = ({position,candidates}) => {
+const PositionCard = ({name,candidates}) => {
   return (
     <div className="election-position-card">
         <div className="election-position-card-title">
-            {position}
+            {name}
         </div>
          <div className="election-candidates-list">
             {candidates.map(candidate=>(

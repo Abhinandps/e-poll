@@ -7,7 +7,7 @@ import Select from '../../../Components/Form/Select'
 import FormLayout from '../../../Components/Layout/FormLayout'
 import "../../../Styles/AddCandidate.css"
 
-const AddCandidates = ({goBack}) => {
+const AddCandidates = ({goBack,candidatesList}) => {
     const data = [
         {
             position: 'Chairman',
@@ -142,7 +142,7 @@ const AddCandidates = ({goBack}) => {
 
 
             <div className="election-view-section candidate-view-section">
-                {data.map(position =>
+                {candidatesList.map(position =>
                     <PositionCard {...position} key={position.position} />
                 )
                 }
