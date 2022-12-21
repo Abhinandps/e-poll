@@ -35,7 +35,7 @@ const DashboardLayout = ({ userData, data }) => {
                     </div>
 
                     <div className="topbar-userDetails-section">
-                        <div className="topbar-avatar">
+                        <div  className="topbar-avatar">
                             <img src={userData.avatar} alt="" />
 
                         </div>
@@ -67,9 +67,10 @@ const DashboardLayout = ({ userData, data }) => {
                     <div className="dashboard-sidebar-navigation-menu">
                         {
                             data.map((navData) => {
+                               
                                 return (
                                     <>
-                                        <NavigationMenu {...navData} />
+                                        <NavigationMenu key={navData.id} {...navData} />
                                     </>
                                 )
                             })

@@ -16,7 +16,7 @@ const Voter = () => {
                     name: "Jhon",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "11"
                 }
 
             ]
@@ -29,25 +29,25 @@ const Voter = () => {
                     name: "Joshua Dyer",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "12"
                 },
                 {
                     name: "Jhon",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "13"
                 },
                 {
                     name: "Joshua Dyer",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "14"
                 },
                 {
                     name: "Jhon",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "15"
                 }
 
             ]
@@ -59,25 +59,25 @@ const Voter = () => {
                     name: "Joshua Dyer",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "16"
                 },
                 {
                     name: "Jhon",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "17"
                 },
                 {
                     name: "Joshua Dyer",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "18"
                 },
                 {
                     name: "Jhon",
                     department: "cs",
                     semester: "6",
-                    rollno: "10"
+                    rollno: "19"
                 }
 
             ]

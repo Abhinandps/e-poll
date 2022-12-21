@@ -8,6 +8,7 @@ const VoterLayout = () => {
    useAuth("voter");
 
     const userData = {
+
         name: "Mia",
         status: "Student",
         avatar: avatar
@@ -15,24 +16,30 @@ const VoterLayout = () => {
 
     const data = [
         {
+            id:1,
             title: "Dashboard",
             subMenu: [
                 {
+                    id:1,
                     title: "Vice-Chairman"
                 },
                 {
+                    id:2,
                     title: "General Secratary"
                 },
                 {
+                    id:3,
                     title: "Magazine Editor",
                 },
             ]
         },
         {
+            id:2,
             title: "History",
             path: "history"
         },
         {
+            id:3,
             title: "Result",
             path: "result"
         }
@@ -42,7 +49,7 @@ const VoterLayout = () => {
 
 
     return (
-        <DashboardLayout userData={userData} data={data} />
+        <DashboardLayout  userData={userData} data={data} />
     )
 }
 
