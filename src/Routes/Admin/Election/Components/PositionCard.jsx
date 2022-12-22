@@ -1,7 +1,7 @@
 import React from 'react'
 import CandidatesCard from './CandidatesCard'
 
-const PositionCard = ({name,candidates}) => {
+const PositionCard = ({name,candidates,removeCandidate}) => {
   return (
     <div className="election-position-card">
         <div className="election-position-card-title">
@@ -9,7 +9,7 @@ const PositionCard = ({name,candidates}) => {
         </div>
          <div className="election-candidates-list">
             {candidates.map(candidate=>(
-                <CandidatesCard {...candidate} key={candidate.name}/>
+                <CandidatesCard onDelete={()=>removeCandidate(candidate)} {...candidate} key={candidate.name}/>
                 ) 
                 )}            
         </div>
