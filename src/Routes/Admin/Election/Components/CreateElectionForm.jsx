@@ -17,7 +17,9 @@ const CreateElectionForm = ({submit,name,positions,positionList,onChange,positio
                 <h2>Select Available Positions</h2>
                 <div className='wrap'>
                     {positionList.map(({ name, id }) =>
-                        <CheckBox label={name} key={id} checked={positions.includes(id)}
+                        <CheckBox label={name} key={id} checked={positions
+                            .map(({id})=>id)
+                            .includes(id)}
                             onChange={(v) => positionsChange(v, id)}
                         />
                     )}

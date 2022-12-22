@@ -10,7 +10,8 @@ const InputField = ({Label,placeholder,type="text",onChange,value,error}) => {
           value={value}
             type={type} 
             placeholder={placeholder}
-            onChange ={e=>onChange(e.target.value)}
+            onChange ={e=>onChange && onChange(e.target.value)}
+            disabled={!onChange}
           />
           <div className='error-field'>{error}</div>
     </div>
