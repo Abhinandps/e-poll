@@ -1,0 +1,21 @@
+*{  
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.errorpage {
+    display: grid;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.errorpage h1{
+    color: rgb(255, 0, 0);
+}
+
+.errorpage p{
+    font-weight: bold;
+    font-size: large;
+}

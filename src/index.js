@@ -6,6 +6,9 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom"
 import './Styles/Home.css'
 import './Styles/UserType.css'
+import './Styles/AdminSignUp.css'
+import './Styles/VoterSignUp.css'
+import './Styles/Error.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

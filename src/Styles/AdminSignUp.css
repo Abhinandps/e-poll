@@ -1,0 +1,56 @@
+
+
+.adminsignupcontent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminsignuptext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.adminsignuptext h1{
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    height: 200px;
+}
+
+.adminsignuptext p{
+    color:white;
+}
+
+.adminsignupform-wrap {
+    display: flex;
+    max-height: 600px;
+    width: 400px;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.adminsignupbottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.adminsignupbottomcontent{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.adminsignupbottomcontent h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.adminsignupbottomcontent p{
+    color: #696969;
+}

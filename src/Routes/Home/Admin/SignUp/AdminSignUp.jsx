@@ -74,47 +74,78 @@ const AdminSignUp = () => {
 
 
   return (
-    <div className='form-wrap'>
-    <div className='home-form'>
-      <h2>
-        Create Account
-      </h2>
-      <form onSubmit={submit}>
-        <InputField
-           Label="Name"
-           value={name}
-           onChange={v=>onChange("name",v)}
-           placeholder="Enter Your Name"
-           error={errorData.name}
-        />
-        <InputField
-            value={email}
-            Label="Email"
-            onChange={v=>onChange("email",v)}
-            placeholder="Enter Your Email"
-            error={errorData.email}
-        />
-        <InputField
-            value={password}
-            Label="Password"
-            type="Password"
-            onChange={v=>onChange("password",v)}
-            placeholder="Enter Your Password"
-            error={errorData.password}
-        />
-        <Select
-         value={college}
-         onChange={v=>onChange("college",v)}
-         Label="College"
-         placeholder="Select College"
-         options={collegeList}
-         error={errorData.college}
-        />
-        <Button
-          title="Create Account"/>
-      </form>
+
+    <>
+
+    <div className="adminsignupcontent">
+          
+          <div className="adminsignuptext">
+            <div>
+              <h1> Vote For The Future </h1>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+              </p>
+            </div>
+          </div>
+          
+      <div className='adminsignupform-wrap'>
+        <div className='home-form'>
+          <h2>
+            Create Account
+          </h2>
+          <form onSubmit={submit}>
+            <InputField
+               Label="Name"
+               value={name}
+               onChange={v=>onChange("name",v)}
+               placeholder="Enter Your Name"
+               error={errorData.name}
+            />
+            <InputField
+                value={email}
+                Label="Email"
+                onChange={v=>onChange("email",v)}
+                placeholder="Enter Your Email"
+                error={errorData.email}
+            />
+            <InputField
+                value={password}
+                Label="Password"
+                type="Password"
+                onChange={v=>onChange("password",v)}
+                placeholder="Enter Your Password"
+                error={errorData.password}
+            />
+            <Select
+             value={college}
+             onChange={v=>onChange("college",v)}
+             Label="College"
+             placeholder="Select College"
+             options={collegeList}
+             error={errorData.college}
+            />
+            <Button
+              title="Create Account"/>
+          </form>
+        </div>
+      </div>
     </div>
-    </div>
+
+    <div className="adminsignupbottom">
+            <div className="adminsignupbottomcontent">
+              <h2>E-Poll System For College Election </h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+                </p>
+            </div>  
+          </div>
+    
+
+
+
+</>
   )
 }
 export default AdminSignUp

@@ -13,6 +13,7 @@ import AdminLayout from "./Routes/Admin/AdminLayout";
 
 import CreateElection from "./Routes/Admin/Election/CreateElection";
 import AddCandidates from "./Routes/Admin/Election/AddCandidates";
+import Error from "./Routes/Home/Error/Error"
 
 
 
@@ -40,6 +41,7 @@ function App() {
         <Route path='election' element={<CreateElection title="Create Election" />} />
         <Route path='add-candidate' element={<AddCandidates title="Add Candidate" />} />
       </Route>
+      <Route path='*' element={<Error/>}></Route>
 
       
 
