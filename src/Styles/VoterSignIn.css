@@ -1,0 +1,54 @@
+.votersignincontent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.votersignintext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.votersignintext h1{
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    height: 200px;
+}
+
+.votersignintext p{
+    color:white;
+}
+
+.votersigninform-wrap {
+    display: flex;
+    max-height: 600px;
+    width: 400px;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.votersigninbottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.votersigninbottomcontent{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.votersigninbottomcontent h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.votersigninbottomcontent p{
+    color: #696969;
+}

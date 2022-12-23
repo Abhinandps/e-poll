@@ -44,7 +44,23 @@ const AdminSignIn = () => {
   }
 
   return (
-    <div className='form-wrap'>
+
+    <>
+
+    <div className="adminsignincontent">
+          
+          <div className="adminsignintext">
+            <div>
+              <h1> Vote For The Future </h1>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+              </p>
+            </div>
+          </div>
+
+    <div className='adminsigninform-wrap'>
       <div className='home-form'>
         <h2>
           Welcome Admin
@@ -73,6 +89,20 @@ const AdminSignIn = () => {
         </form>
       </div>
     </div>
+    </div>
+
+    <div className="adminsigninbottom">
+            <div className="adminsigninbottomcontent">
+              <h2>E-Poll System For College Election </h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+                </p>
+            </div>  
+          </div>
+
+
+
+    </>
   )
 }
 

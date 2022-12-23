@@ -9,7 +9,8 @@ import './Styles/UserType.css'
 import './Styles/AdminSignUp.css'
 import './Styles/VoterSignUp.css'
 import './Styles/Error.css'
-
+import './Styles/VoterSignIn.css'
+import './Styles/AdminSignIn.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

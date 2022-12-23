@@ -41,7 +41,22 @@ const submit = async event=>{
 }
 
   return (
-    <div className='form-wrap'>
+
+    <>
+
+    <div className="votersignincontent">
+          
+          <div className="votersignintext">
+            <div>
+              <h1> Vote For The Future </h1>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+              </p>
+            </div>
+          </div>
+    <div className='votersigninform-wrap'>
     <div className='home-form'>
     <h2>
       Welcome to E-Poll!!
@@ -70,6 +85,19 @@ const submit = async event=>{
    </form>
    </div>
    </div>
+</div>
+
+<div className="votersigninbottom">
+            <div className="votersigninbottomcontent">
+              <h2>E-Poll System For College Election </h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nesciunt quibusdam nobis culpa odit sint eaque, iste natus!
+                </p>
+            </div>  
+          </div>
+
+  </>
+
   )
 }
 
