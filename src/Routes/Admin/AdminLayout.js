@@ -14,35 +14,37 @@ const AdminLayout = () => {
     const data = [
         {
             title: "Dashboard",
+            path:"admin/dashboard"
         },
         {
             title: "Students",
-            path: "students"
+            path: "admin/students"
         },
         {
             title: "Election",
-            path: "election",
+            path: "admin/election",
             subMenu: [
                 {
                     title: "Create Election",
-                    path:"election"
+                    path:"admin/election"
                 },
                 {
                     title: "View Candidates",
+                    path:"admin/view-candidates"
                 },
             ]
         },
         {
             title: "Posts",
-            path: "posts"
+            path: "admin/posts"
         },
         {
             title: "Branches",
-            path: "branches"
+            path: "admin/branches"
         },
         {
             title: "Result",
-            path: "result"
+            path: "admin/result"
         }
     ]
 

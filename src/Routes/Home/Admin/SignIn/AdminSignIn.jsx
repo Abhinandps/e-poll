@@ -39,7 +39,7 @@ const AdminSignIn = () => {
   localStorage.setItem("token",response.data.token);
   localStorage.setItem("userType",response.data.userType);
   console.log(response);
-  navigate("/dashboard/admin")
+  navigate("/dashboard/admin/dashboard")
     console.log(formData);
   }
 

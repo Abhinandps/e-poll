@@ -37,7 +37,7 @@ const submit = async event=>{
   localStorage.setItem("token",response.data.token);
   localStorage.setItem("userType",response.data.userType);
   console.log(response);
-  navigate("/dashboard/voter")
+  navigate("/dashboard/voter/dashboard")
 }
 
   return (
