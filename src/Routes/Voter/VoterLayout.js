@@ -18,6 +18,7 @@ const VoterLayout = () => {
         {
             id:1,
             title: "Dashboard",
+            path:'voter/dashboard',
             subMenu: [
                 {
                     id:1,
@@ -36,12 +37,12 @@ const VoterLayout = () => {
         {
             id:2,
             title: "History",
-            path: "history"
+            path: "voter/history"
         },
         {
             id:3,
             title: "Result",
-            path: "result"
+            path: "voter/result"
         }
     ]
 
