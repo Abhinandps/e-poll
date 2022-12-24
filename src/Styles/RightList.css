@@ -1,0 +1,34 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    border-block-end: #9592A6;
+    border-width: 0.5px;
+}
+li{
+    display: flex;
+}
+
+.rightContainer{
+    height: 629px;
+    width: 259px;
+    left: 814px;
+    top: 366px;
+    border-radius: 10px;
+    display: contents;
+    justify-content: space-around;
+    
+    
+}
+.history{
+background-color: #9592A6;
+height: 62px;
+width: 559px;
+border-top-left-radius: 10px;
+border-top-right-radius:10px ;
+
+}
+.name,.department,.year,.votes{
+    color: #9592A6;
+    
+}

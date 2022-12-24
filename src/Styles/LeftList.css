@@ -1,0 +1,31 @@
+.ul{
+    list-style-type: none;
+}
+li{
+    display: flex;
+    justify-content:space-around ;   
+}
+
+.leftContainer{
+height: 93px;
+width: 473px; 
+border-radius: 10px;
+background-color: #FFFFFF;
+align-items: content;
+display: flex;
+flex-direction: row;
+margin: 0.5em;;
+justify-content: space-around;
+
+}
+.name{
+height: 24px;
+width: 105px;
+border-radius: null;
+text-align: center;
+
+}
+.title{
+    color: #9592A6;
+}
+
