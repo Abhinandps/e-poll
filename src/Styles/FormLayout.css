@@ -1,54 +1,122 @@
-
-
-.form-container{
+.form-container {
     max-width: 90%;
-    min-height:60vh;
+    min-height: 25vh;
     background: #fff;
     margin: 50px auto;
-    border-radius:10px ;
+    border-radius: 10px;
     box-shadow: 0px -1px 33px -8px rgba(0, 0, 0, 0.2);
 }
-.form-content h2{
+
+.form-content h2 {
     padding-left: 10px;
     font-weight: 300;
     font-size: 16px;
     color: #787878;
-      
+
 }
 
-.form-header{
+.form-header {
     height: 60px;
     background: #9592A6;
     border-radius: 10px 10px 0px 0;
     display: flex;
     justify-content: flex-start;
-    align-items: center;  
+    align-items: center;
 }
 
-.form-header h2{
+.form-header h2 {
     padding-left: 25px;
     color: #fff;
     font-size: 20px;
 }
-.form-content{
+
+.form-content {
     padding: 20px 30px;
+    position: relative;
 }
 
 
-.button-section{
-   width: 100%;
-   display: flex;
-   justify-content: center;
+.button-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 
-.form-content .wrap{
+.form-content .wrap {
     padding: 25px;
     display: grid;
-    grid-template-columns: repeat(4,200px);
+    grid-template-columns: repeat(4, 200px);
     gap: 25px;
 }
 
-.button-section .btn{
+.button-section .btn {
     width: 80px;
 }
+
+
+/* posts branches file style */
+
+
+.container-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.container-main .form-container{
+    margin: 50px auto;
+    min-width:400px ;
+}
+
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title-section h2 {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.list-container .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.list-container .list p {
+    font-size: 15px;
+}
+
+.list-container .list .icon-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-container .list .icon-group img{
+    cursor: pointer;
+}
+
+
+.add-btn{
+    padding: 10px 20px;
+}
+
+
+
+@media screen and (max-width:1120px) {
+    
+.container-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+}
+

@@ -5,7 +5,7 @@ import FileUpload from '../../../../Components/Form/FileUpload'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
 import FormLayout from '../../../../Components/Layout/FormLayout'
-import "../../../../Styles/AddCandidate.css"
+
 import apiCall from '../../../../Services/apiCall'
 
 const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) => {
