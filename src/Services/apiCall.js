@@ -1,12 +1,15 @@
 import { apiUrl } from "../Config/apiUrl";
 
-const apiCall = async(url,method="GET",data)=>{
+const apiCall = async(url,method="GET",data,isFile = false)=>{
     const res = await fetch(`${apiUrl}${url}`, {
             method,
-            headers:{
+            headers: !isFile
+            ? {
                 "Content-Type": "application/json",
-            },
-            body: data ? JSON.stringify(data) : undefined,
+                authorization: localStorage.getItem("token"),
+            }
+            : {},
+            body:isFile ? data: data ? JSON.stringify(data) : undefined,
         });
         const response = await res.json();
         return response;

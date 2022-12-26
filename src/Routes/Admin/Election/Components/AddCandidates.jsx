@@ -15,11 +15,12 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
         name: "",
         batch: "",
         position: "",
+        image:"",
     });
 
     const [registerNumberError, setRegisterNumberError] = useState("")
 
-    const { registerNumber, name, batch, position } = formData
+    const { registerNumber, name, batch, position,image } = formData
 
     const onChange = (key, value) => {
         setFormData(prev => ({
@@ -96,8 +97,9 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
                             />
 
                             <FileUpload
-                                Label="Select Avatar"
-                                type='file'
+                                Label="Select A                                 vatar"
+                                value={image}
+                                onChange={v=>onChange("image",v)}
                             />
                         </div>
                     </div>
@@ -106,7 +108,7 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
                         <Button type='button' title="Clear" />
                     </div>
                 </form>
-            </FormLayout>
+            </FormLayout>``
 
 
             <div className="election-view-section candidate-view-section">
