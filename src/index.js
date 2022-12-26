@@ -11,6 +11,7 @@ import './Styles/VoterSignUp.css'
 import './Styles/Error.css'
 import './Styles/VoterSignIn.css'
 import './Styles/AdminSignIn.css'
+import "./Styles/AddCandidate.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
