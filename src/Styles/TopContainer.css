@@ -69,3 +69,14 @@ margin:2px;
 .bottom{
     display: flex;
 }
+
+.value{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    color: #9592A6;
+}

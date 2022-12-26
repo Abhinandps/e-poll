@@ -15,25 +15,25 @@ const TopContainer = () => {
       <div className="topContainer">
       <div className="itemContainer1">
         <div className="title1"><p>Student</p></div>
-        <div className="value">26</div>
-        <div className="icon"><img src={StudIcon} alt=""></img></div>
+        <div className="value">26
+              <img src={StudIcon} alt=""></img></div>
       </div>
       
         <div className="itemContainer2">
         <div className="title2"><p>Candidate</p></div>
-        <div className="value">13</div>
-        <div className="icon"><img src={CandIcon} alt=""></img></div>
+        <div className="value">13
+            <img src={CandIcon} alt=""></img></div>
        </div>
         
         <div className="itemContainer3">
           <div className="title3"><p>Posts</p></div>
-          <div className="value">6</div>
-          <div className="icon"><img src={ListIcon} alt=""></img></div>
+          <div className="value">6
+              <img src={ListIcon} alt=""></img></div>
         </div>
         <div className="itemContainer4">
           <div className="title4"><p>Voted</p></div>
-          <div className="value">9</div>
-          <div className="icon"><img src={BarIcon} alt=""></img></div>
+          <div className="value">9
+             <img src={BarIcon} alt=""></img></div>
         </div>
         </div>
 
