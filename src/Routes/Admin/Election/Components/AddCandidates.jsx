@@ -5,18 +5,23 @@ import FileUpload from '../../../../Components/Form/FileUpload'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
 import FormLayout from '../../../../Components/Layout/FormLayout'
-
+import "../../../../Styles/AddCandidate.css"
 import apiCall from '../../../../Services/apiCall'
+import { clear } from '@testing-library/user-event/dist/clear'
+
+const emptyFormData ={
+    registerNumber: "",
+    name: "",
+    batch: "",
+    position: "",
+    image: ""
+}
 
 const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) => {
 
-    const [formData, setFormData] = useState({
-        registerNumber: "",
-        name: "",
-        batch: "",
-        position: "",
-        image:"",
-    });
+    const [formData, setFormData] = useState(
+        emptyFormData
+    );
 
     const [registerNumberError, setRegisterNumberError] = useState("")
 
@@ -49,8 +54,14 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
     const submit = (e)=>{
         e.preventDefault();
         addCandidate(formData)
+        clear()
 
     }
+    
+    const clear = ()=>{
+        setFormData(emptyFormData)
+    }
+
     return (
         <>
             <FormLayout title={"Add Candidate"}>
@@ -97,7 +108,7 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
                             />
 
                             <FileUpload
-                                Label="Select A                                 vatar"
+                                Label="Select Avatar"
                                 value={image}
                                 onChange={v=>onChange("image",v)}
                             />
@@ -105,7 +116,7 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
                     </div>
                     <div className="button-section">
                         <Button type='submit' color="#66BCCF" title="Add" />
-                        <Button type='button' title="Clear" />
+                        <Button type='button' title="Clear" onClick={clear}/>
                     </div>
                 </form>
             </FormLayout>``
