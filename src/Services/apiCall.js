@@ -6,7 +6,7 @@ const apiCall = async(url,method="GET",data,isFile = false)=>{
             headers: !isFile
             ? {
                 "Content-Type": "application/json",
-                authorization: localStorage.getItem("token"),
+                authorization: `Bearer ${localStorage.getItem("token")}`,
             }
             : {},
             body:isFile ? data: data ? JSON.stringify(data) : undefined,

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import apiCall from '../../../Services/apiCall';
 import AddCandidates from './Components/AddCandidates';
 import CreateElectionForm from './Components/CreateElectionForm';
 
@@ -6,15 +7,16 @@ import CreateElectionForm from './Components/CreateElectionForm';
 
 const CreateElection = () => {
 
-  const positionList = [
-    "Chairman",
-    "Vice-Chairman",
-    "General Secratary",
-    "Magazine Editor",
-    "Arts club secretary",
-    "Ladies Representative"
-  ].map((name, index) => ({ name, id: index + 1 }))
+  const [positionList,setPositionList] = useState([])
+    
+  const getProfile = async () => {
+    const res = await apiCall("/admin/profile")
+    setPositionList(res.data.college.positions.map(d => ({ ...d, id: d._id })))
+  }
 
+  useEffect(() => {
+    getProfile()
+  }, [])
 
   const [data, setData] = useState({
     currentPage: 1,

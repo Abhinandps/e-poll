@@ -62,11 +62,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    grid-template-areas: "list input-list";
 }
 
 .container-main .form-container{
     margin: 50px auto;
     min-width:400px ;
+  
+}
+.container-main .form-container:nth-child(1){
+    grid-area: list;
+}
+.container-main .form-container:nth-child(2){
+    grid-area: input-list;
 }
 
 
@@ -116,7 +124,12 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    grid-template-areas: "input-list" 
+                         "list";
+
 }
+
+
 
 }
 
