@@ -44,24 +44,22 @@ const LeftList = () => (
   
   <ul>
   
-
+<div className="ContainerMain">
 <div className="title">Number of Votes</div>
     {list.map(item => (
       <li key={item.id}>
         <div className="leftContainer">
-          <div className="image"><img src ={avatar} alt=""></img></div>
+          <div className="imageClass"><img src ={avatar} alt=""></img></div>
           <div className="name">{item.name}</div>
           <div className="votes">{item.votes}</div>
-          <div className="bar">
-
-           </div>
-          
-      
-        </div>
-          
+          <div className="progress-div">
+             <div className="progress"></div>
+          </div>
+        </div>  
       </li>
-      
     ))}
+</div>
+
   </ul>
 
 );

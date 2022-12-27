@@ -1,26 +1,24 @@
 .header
 {
-    height: 35px;
-    width: 328px;
-    left: 290px;
-    top: 119px;
-    border-radius: null;
-    Font:Poppins;
     display: flex;
-    
+    justify-content: flex-start;
+    font-weight: 700;
+    font-size: 23px;
+    color: #8695A0;  
+    align-items: center;  
 }
+
 .topContainer{
 display: flex;
 flex-direction: row;
-justify-content: space-around;
-margin:2px;
+justify-content: space-between;
+/* margin:2px; */
 
 
 }
 .itemContainer1,.itemContainer2,.itemContainer3,.itemContainer4{
     height: 130px;
     width: 211.27px;
-    left: 291px;
     top: 188px;
     border-radius: 10px;
     display: flex;
@@ -33,11 +31,11 @@ margin:2px;
 .title1,.title2,.title3,.title4{
     height: 47px;
     width: 211.27120971679688px;
-    left: 291px;
     top: 188px;
     border-top-left-radius: 10px;
     border-top-right-radius:10px ;
     text-align: center;
+    padding-left: 35px;
     
    
     
@@ -59,8 +57,8 @@ margin:2px;
     background-color:#66CF96 ;
 }
 .Container{
-    margin: 0.5em;
-    padding: .5em;
+    /* margin: 0.7em; */
+    padding: 1.7em;
     background-color: #f0e9e9ec;
     height:100vh;
     
@@ -74,9 +72,40 @@ margin:2px;
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
-    position: relative;
     font-weight: 600;
     font-size: 30px;
-    line-height: 45px;
     color: #9592A6;
+}
+
+.topContainer p{
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.Left-container{
+    
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.progress-div{
+    background: #9592A6;
+    border-radius: 10px;
+    width: 50%;
+    height: 10px;
+}
+
+.progress {
+    background: #66CF96;
+    border-radius: 10px 0px 0px 10px;
+    height: 10px;
+    width: 30px;
+
+
 }

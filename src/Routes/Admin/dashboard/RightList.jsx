@@ -62,7 +62,7 @@ const RightList = () => (
     {list.map(item => (
       <li key={item.id}>
         
-        <div className="image"><img src ={admin} alt=""></img></div>
+        <div className="imageClass"><img src ={admin} alt=""></img></div>
         <div className="name">{item.name}</div>
         <div className="year">{item.year}</div>
         <div className="department">{item.department}</div>

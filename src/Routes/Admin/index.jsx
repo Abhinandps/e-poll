@@ -33,15 +33,20 @@ const TopContainer = () => {
         <div className="itemContainer4">
           <div className="title4"><p>Voted</p></div>
           <div className="value">9
+             <div className="progress-div">
+                   <div className="progress"></div>
+             </div>
              <img src={BarIcon} alt=""></img></div>
         </div>
         </div>
 
         <div className="bottom">
-       
+       <div className="Left-container">
        <LeftList/>
-       
+       </div>
+       <div className="Right-container">
        <RightList/>
+       </div>
          </div>
          
          

@@ -4,9 +4,12 @@ ul{
     flex-direction: column;
     border-block-end: #9592A6;
     border-width: 0.5px;
+
+
 }
 li{
     display: flex;
+
 }
 
 .rightContainer{
@@ -17,9 +20,11 @@ li{
     border-radius: 10px;
     display: contents;
     justify-content: space-around;
-    
-    
+    align-items: center;    
 }
+
+
+
 .history{
 background-color: #9592A6;
 height: 62px;
@@ -30,5 +35,30 @@ border-top-right-radius:10px ;
 }
 .name,.department,.year,.votes{
     color: #9592A6;
+    padding-top: 20px;
     
+}
+
+.imageClass { 
+    display: inline-block; 
+    overflow: hidden; 
+    border-radius: 50%; } 
+
+.imageClass img { 
+    height: 100%; 
+}
+
+.history{
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    /* display: flex; */
+    padding: 15px;
+
+}
+
+.rightContainer li{
+    border-bottom: 0.5px solid #9E9E9E;
+    background: #FFFFFF;
 }
