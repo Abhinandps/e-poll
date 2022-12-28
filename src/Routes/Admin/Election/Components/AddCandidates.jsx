@@ -5,11 +5,12 @@ import FileUpload from '../../../../Components/Form/FileUpload'
 import InputField from '../../../../Components/Form/InputField'
 import Select from '../../../../Components/Form/Select'
 import FormLayout from '../../../../Components/Layout/FormLayout'
-import "../../../../Styles/AddCandidate.css"
-import apiCall from '../../../../Services/apiCall'
-import { clear } from '@testing-library/user-event/dist/clear'
 
-const emptyFormData ={
+import apiCall from '../../../../Services/apiCall'
+
+import PopUpCard from '../../../../Components/Cards/PopUpCard'
+
+const emptyFormData = {
     registerNumber: "",
     name: "",
     batch: "",
@@ -17,7 +18,10 @@ const emptyFormData ={
     image: ""
 }
 
-const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) => {
+const AddCandidates = ({ goBack, candidatesList, addCandidate, removeCandidate, saveToDraft = () => { } }) => {
+
+    //pop up state
+    const [show, setShow] = useState(false);
 
     const [formData, setFormData] = useState(
         emptyFormData
@@ -25,7 +29,7 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
 
     const [registerNumberError, setRegisterNumberError] = useState("")
 
-    const { registerNumber, name, batch, position,image } = formData
+    const { registerNumber, name, batch, position, image } = formData
 
     const onChange = (key, value) => {
         setFormData(prev => ({
@@ -33,6 +37,8 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
             [key]: value
         }))
     }
+
+
 
     const searchVoter = async () => {
         setRegisterNumberError("")
@@ -51,14 +57,14 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
         setRegisterNumberError("Please Enter a Valid register number")
     }
 
-    const submit = (e)=>{
+    const submit = (e) => {
         e.preventDefault();
         addCandidate(formData)
         clear()
 
     }
-    
-    const clear = ()=>{
+
+    const clear = () => {
         setFormData(emptyFormData)
     }
 
@@ -110,16 +116,16 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
                             <FileUpload
                                 Label="Select Avatar"
                                 value={image}
-                                onChange={v=>onChange("image",v)}
+                                onChange={v => onChange("image", v)}
                             />
                         </div>
                     </div>
                     <div className="button-section">
                         <Button type='submit' color="#66BCCF" title="Add" />
-                        <Button type='button' title="Clear" onClick={clear}/>
+                        <Button type='button' title="Clear" onClick={clear} />
                     </div>
                 </form>
-            </FormLayout>``
+            </FormLayout>
 
 
             <div className="election-view-section candidate-view-section">
@@ -130,12 +136,26 @@ const AddCandidates = ({ goBack, candidatesList,addCandidate,removeCandidate }) 
             </div>
 
             <div className='btn-draft-section'>
-                <Button type='button' color="#9592A6" title="Save Draft" />
+                <Button type='button' onClick={saveToDraft} color="#9592A6" title="Save Draft" />
             </div>
+
+            <PopUpCard show={show} onClose={()=>setShow(false)} >
+                <h2>Choose Time For Close The  Election</h2>
+                <div className="contents">
+                    <InputField
+                        type='time'
+
+                        onChange={(v) => { }}
+                    />
+                    <Select options={[]} placeholder="Choose" />
+                </div>
+                <Button type="button" title="Publish Now" />
+            </PopUpCard>
+
             <div className="button-section">
 
                 <Button type='button' title="Prev" onClick={goBack} />
-                <Button type='button' color="#2d7feb" title="Publish" />
+                <Button type='button' onClick={() => setShow(true)} color="#2d7feb" title="Publish" />
             </div>
 
 
