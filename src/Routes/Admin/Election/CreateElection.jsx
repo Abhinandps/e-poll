@@ -12,6 +12,23 @@ const CreateElection = () => {
   const getProfile = async () => {
     const res = await apiCall("/admin/profile")
     setPositionList(res.data.college.positions.map(d => ({ ...d, id: d._id })))
+    const elections = await apiCall("/admin/get-elections");
+    if(elections.data?.length)return
+    const election = elections.data[0];
+    setData({
+      ...data,
+      name: election.name,
+      id: election._id,
+      positions: election.positions.map(p=>({
+        id:p.position,
+        candidates:p.candidates.map(c=>({
+          image:c.image,
+          ...c.student,
+          id:c.student._id,
+          position: p.position
+        }))
+      }))
+    })
   }
 
   useEffect(() => {
@@ -26,9 +43,6 @@ const CreateElection = () => {
     ]
 
   })
-
-  const { name, positions } = data;
-
 
   const positionsChange = (value, id) => {
     if (value) {
@@ -70,6 +84,7 @@ const CreateElection = () => {
   }
 
   const removeCandidate = (candidate) => {
+    
     setData(prev => {
       const data = { ...prev }
       const positions = [...data.positions]
@@ -83,7 +98,6 @@ const CreateElection = () => {
       positions[index] = position
       data.positions = positions
 
-      // data.positions[0].candidates = [...data.positions[0].candidates,candidate]
       return data
     })
   }
@@ -91,7 +105,6 @@ const CreateElection = () => {
   const submit = (e) => {
     e.preventDefault();
     onChange("currentPage", 2)
-    console.log(data);
   }
 
   const onChange = (key, value) => {
@@ -100,7 +113,38 @@ const CreateElection = () => {
       [key]: value
     }))
   }
+  
+  const saveToDraft = async ()=>{
+    const payload = {
+      name: data.name,
+      positions: data.positions.map(d=>({
+        position: d.id,
+        candidates: d.candidates.map(c=>({
+          student: c._id,
+          image: c.image
+        }))
+      }))
+    }
+    if(data.id){
+      await apiCall(
+        "/admin/update-election",
+        "POST",
+        {
+          ...payload,
+          id: data.id
+        }
+        )
+        return;
+    }
+    
+    const res = await apiCall(
+      "/admin/create-election",
+      "POST",
+      payload
+      )
+    onChange("id",res.data._id);
 
+  }
 
   const goBack = () => {
     onChange("currentPage", 1)
@@ -110,6 +154,7 @@ const CreateElection = () => {
       goBack={goBack}
       addCandidate={addCandidate}
       removeCandidate={removeCandidate}
+      saveToDraft={saveToDraft}
       {...data}
       candidatesList={data.positions.map(
         (data) => (
