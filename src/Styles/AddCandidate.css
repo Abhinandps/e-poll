@@ -96,7 +96,7 @@
     margin: 90px auto;
     border-radius: 10px;
     padding: 20px 30px;
-    height: 25vh;
+    min-height: 25vh;
     background: rgb(255, 248, 240);
     animation: fadeInDown 0.8s ease-in-out;
     position: relative;
@@ -142,7 +142,6 @@
     .popup-card {
         max-width: 280px;
         padding: 30px ;
-        height: 30vh;
     }
 }
 
