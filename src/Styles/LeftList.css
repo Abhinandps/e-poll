@@ -55,11 +55,27 @@ text-align: center;
     width: 50%;
     height: 10px;
 }
+.progress-div-extended{
+    background: #9592A6;
+    border-radius: 10px;
+    width: 150px;
+    height: 10px
+}
 
 .progress {
     background: #66CF96;
     border-radius: 10px 0px 0px 10px;
     height: 10px;
     width: 30px;
+}
+
+
+@media screen and (max-width:550px) {
+    .progress-div-extended{
+        background: #9592A6;
+        border-radius: 10px;
+        width: 200px;
+        height: 10px
+    }
 }
 

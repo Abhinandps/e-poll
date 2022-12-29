@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import PositionCard from "../../Components/Cards/PositionCard"
 import apiCall from '../../Services/apiCall'
+import Button from '../../Components/Form/Button'
+
 const Voter = () => {
     
     const [data,setData] = useState([]) 

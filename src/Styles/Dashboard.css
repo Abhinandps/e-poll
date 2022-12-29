@@ -1,51 +1,54 @@
-.dashboard-main{
+.dashboard-main {
     padding: 30px;
     background-color: #EEEEEE;
 }
 
-.dashboard-main h2{
+.dashboard-main h2 {
     color: #8695A0;
 }
 
-.election-header-section{
+.election-header-section {
     text-align: center;
 }
 
-.election-title-section{
+.election-title-section {
     padding: 10px 20px;
     border-radius: 5px;
 }
-.election-title-section h2{
+
+.election-title-section h2 {
     text-transform: uppercase;
     color: #8695A0;
     font-size: 30px;
 }
-.election-title-section span{
+
+.election-title-section span {
     color: #6E66CF;
 }
 
-.election-time-reminder{
+.election-time-reminder {
     background: #ffffff;
-    border-radius:5px ;
+    border-radius: 5px;
 }
-.election-time-reminder marquee{
+
+.election-time-reminder marquee {
     color: rgb(255, 42, 42);
 }
 
-.election-view-section{
+.election-view-section {
     display: grid;
     padding-top: 20px;
     gap: 20px;
 }
 
-.election-position-card{
+.election-position-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px -1px 33px -8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
-.election-position-card-title{
+.election-position-card-title {
     background-color: #66BCCF;
     /* border-radius: 10px 10px 0 0; */
     color: #fff;
@@ -53,14 +56,14 @@
     font-size: 18px;
 }
 
-.election-candidates-list{
+.election-candidates-list {
     padding: 25px;
     display: grid;
-    grid-template-columns: repeat(4,200px);
+    grid-template-columns: repeat(4, 200px);
     gap: 25px;
 }
 
-.candidates-card{
+.candidates-card {
     background-color: #DADADA47;
     box-shadow: 1px 0px 6px 1px rgb(16 16 16 / 12%);
     border-radius: 10px;
@@ -71,63 +74,135 @@
     gap: 5px;
 }
 
-.candidates-avatar{
+.candidates-win-card {
+    background: linear-gradient(180deg, rgba(84, 202, 226, 0.85) 0%, rgba(205, 102, 207, 0.85) 100%);
+    box-shadow: 1px 0px 6px 1px rgb(16 16 16 / 12%);
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+    gap: 5px;
+    position: relative;
+}
+
+.candidates-win-card::before {
+    content: 'WIN';
+    color: #fff;
+    font-size: 13px;
+    width: 40px;
+    height: 18px;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: #424242;
+    border: 3px solid #CD66CF;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+
+
+
+.candidates-avatar {
     overflow: hidden;
     border-radius: 50%;
     width: 100px;
     height: 100px;
 }
 
-.candidate-avatar img{
+.candidate-avatar img {
     width: 100%;
     height: 100%;
 }
 
-.candidates-name{
+.candidates-name {
     color: #66BCCF;
     font-size: 18px;
     font-weight: bold;
 }
+.candidates-win-name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-.candidate-select{
+
+
+
+.candidate-select {
     display: flex;
     gap: 10px;
     padding: 10px 0;
 }
 
-.candidate-select label{
+.candidate-select label {
     color: #9E9E9E;
     font-size: 18px;
 }
 
-.candidates-details{
+.candidates-details {
     color: #9E9E9E;
     font-size: 14px;
+}
+.candidates-details {
+    color: #9E9E9E;
+    font-size: 14px;
+}
+
+.candidates-details .view-vote {
+    color: #9592A6;
+    font-size: 20px;
+    font-weight: bold;
+}
+.candidates-details .win-view-vote {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
 
 
 @media screen and (max-width: 1220px) {
-    .election-candidates-list{
-        grid-template-columns: repeat(3,200px);
+    .election-candidates-list {
+        grid-template-columns: repeat(3, 200px);
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .election-candidates-list{
-        grid-template-columns: repeat(2,200px);
+    .election-candidates-list {
+        grid-template-columns: repeat(2, 200px);
     }
 }
 
 @media screen and (max-width: 780px) {
-    .election-candidates-list{
-        grid-template-columns: repeat(2,200px);
+    .election-candidates-list {
+        grid-template-columns: repeat(2, 200px);
     }
 }
 
 @media screen and (max-width: 550px) {
-    .election-candidates-list{
+    .election-candidates-list {
         grid-template-columns: repeat(1, 1fr);
     }
+    
+.candidates-win-card::before {
+    content: 'WIN';
+    color: #fff;
+    font-size: 15px;
+    width: 60px;
+    height: 23px;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: #424242;
+    border: 2px solid #CD66CF;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 }
