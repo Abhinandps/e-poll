@@ -14,7 +14,7 @@ import AdminLayout from "./Routes/Admin/AdminLayout";
 import CreateElection from "./Routes/Admin/Election/CreateElection";
 import Error from "./Routes/Home/Error/Error"
 import History from "./Routes/Voter/History";
-import Result from "./Routes/Voter/Result";
+import VoterResult from "./Routes/Voter/VoterResult";
 
 
 import Admin from "./Routes/Admin";
@@ -47,7 +47,7 @@ function App() {
         <Route path='voter' >
          <Route path="dashboard" element={<Voter />} />
          <Route path="history" element={<History/>} />
-         <Route path="result" element={<Result/>} />
+         <Route path="result" element={<VoterResult/>} />
         </Route>
       </Route>
       <Route path='/dashboard' element={<AdminLayout />}>

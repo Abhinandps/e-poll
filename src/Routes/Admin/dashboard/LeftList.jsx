@@ -1,6 +1,8 @@
 import React from 'react';
 import './../../../Styles/LeftList.css';
 import avatar from './../../../Assets/Images/avatar.png';
+import ProgressBar from '../../../Components/GraphicalElelments/ProgressBar/ProgressBar';
+
 const list = [
     {
       id: 'a',
@@ -40,6 +42,7 @@ const list = [
     }
 ];
 
+
 const LeftList = () => (
   
   <ul>
@@ -52,9 +55,9 @@ const LeftList = () => (
           <div className="imageClass"><img src ={avatar} alt=""></img></div>
           <div className="name">{item.name}</div>
           <div className="votes">{item.votes}</div>
-          <div className="progress-div">
-             <div className="progress"></div>
-          </div>
+
+          <ProgressBar/>
+
         </div>  
       </li>
     ))}

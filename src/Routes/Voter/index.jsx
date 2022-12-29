@@ -1,5 +1,6 @@
 import React from 'react'
 import PositionCard from "../../Components/Cards/PositionCard"
+import Button from '../../Components/Form/Button'
 const Voter = () => {
     
     const data = [
