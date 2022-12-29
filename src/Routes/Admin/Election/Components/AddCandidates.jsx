@@ -149,7 +149,12 @@ const AddCandidates = ({ goBack, candidatesList, addCandidate, removeCandidate, 
                     />
                     <Select options={[]} placeholder="Choose" />
                 </div>
-                <Button type="button" title="Publish Now" />
+                <Button type="button" title="Publish Now" onClick={()=>
+                saveToDraft("ongoing")
+                setShow(false)
+                }
+                   }
+                />
             </PopUpCard>
 
             <div className="button-section">

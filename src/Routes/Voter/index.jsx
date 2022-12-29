@@ -1,90 +1,31 @@
-import React from 'react'
+import { useEffect, useState } from "react"
 import PositionCard from "../../Components/Cards/PositionCard"
+import apiCall from '../../Services/apiCall'
 const Voter = () => {
     
-    const data = [
-        {
-            position: 'Chairman',
-            candidates: [
-                {
-                    name: "Joshua Dyer",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "10"
-                },
-                {
-                    name: "Jhon",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "11"
-                }
-
-            ]
-        },
-
-        {
-            position: 'Vice-Chairman',
-            candidates: [
-                {
-                    name: "Joshua Dyer",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "12"
-                },
-                {
-                    name: "Jhon",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "13"
-                },
-                {
-                    name: "Joshua Dyer",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "14"
-                },
-                {
-                    name: "Jhon",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "15"
-                }
-
-            ]
-        },
-        {
-            position: 'General Secretary',
-            candidates: [
-                {
-                    name: "Joshua Dyer",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "16"
-                },
-                {
-                    name: "Jhon",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "17"
-                },
-                {
-                    name: "Joshua Dyer",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "18"
-                },
-                {
-                    name: "Jhon",
-                    department: "cs",
-                    semester: "6",
-                    rollno: "19"
-                }
-
-            ]
-        }
-
-    ]
-
+    const [data,setData] = useState([]) 
+      
+    const getElection = async()=>{
+        const res =await apiCall("/voter/voter-election")
+        setData(
+            res.Data.positions.map(p=>({
+                id:p.id,
+                position: p.position.name,
+                candidates:p.candidates.map(c=>({
+                    name:c.student.name,
+                    department:c.student.batch,
+                    semester:c.student.batch,
+                    rollno:c.student.registerNumber,
+                    image:c.image,
+                    id:c._id
+                }))
+                
+            }))
+        );
+    }
+    useEffect(()=>{
+        getElection()
+    },[])
 
     return (
         <div className="dashboard-main">

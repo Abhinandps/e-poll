@@ -1,14 +1,16 @@
+import { staticUrl } from "../../Config/apiUrl"
 import avatar from "./../../Assets/Images/avatar.png"
 const CandidatesCard = (
    {name,
     department,
     semester,
-    rollno}
+    rollno,
+    image}
 ) =>{
     return(
         <div className="candidates-card">
                 <div className="candidates-avatar">
-                    <img src={avatar} alt="" />
+                    <img src={image?staticUrl+image:avatar} alt="" />
                 </div>
                 <div className="candidate-select">
                     <label>select</label>

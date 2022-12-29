@@ -1,3 +1,5 @@
+import {useState,useEffect} from 'react'
+import apiCall from '../../Services/apiCall'
 import DashboardLayout from '../../Components/Layout/DashboardLayout'
 
 import avatar from "../../Assets/Images/avatar.png"
@@ -7,12 +9,25 @@ const VoterLayout = () => {
    
    useAuth("voter");
 
-    const userData = {
+    const [userData,setUserData] = useState({
 
-        name: "Mia",
+        name: "",
         status: "Student",
         avatar: avatar
-    }
+    });
+    const getprofile =async () => {
+        const res= await apiCall("/voter/profile");
+        setUserData({
+            ...userData,
+            name: res.data.name,
+        });
+
+    };
+
+    useEffect(() => {
+        getprofile();
+    },[]);
+
 
     const data = [
         {

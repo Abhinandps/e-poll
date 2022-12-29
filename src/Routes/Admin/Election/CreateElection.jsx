@@ -20,12 +20,12 @@ const CreateElection = () => {
       name: election.name,
       id: election._id,
       positions: election.positions.map(p=>({
-        id:p.position,
+        id:p.position._id,
         candidates:p.candidates.map(c=>({
           image:c.image,
           ...c.student,
           id:c.student._id,
-          position: p.position
+          position: p.position._id
         }))
       }))
     })
@@ -114,9 +114,10 @@ const CreateElection = () => {
     }))
   }
   
-  const saveToDraft = async ()=>{
+  const saveToDraft = async (status)=>{
     const payload = {
       name: data.name,
+      status,
       positions: data.positions.map(d=>({
         position: d.id,
         candidates: d.candidates.map(c=>({
