@@ -13,19 +13,19 @@ const CreateElection = () => {
     const res = await apiCall("/admin/profile")
     setPositionList(res.data.college.positions.map(d => ({ ...d, id: d._id })))
     const elections = await apiCall("/admin/get-elections");
-    if(elections.data?.length)return
+    if(!elections.data?.length)return
     const election = elections.data[0];
     setData({
       ...data,
       name: election.name,
       id: election._id,
       positions: election.positions.map(p=>({
-        id:p.position,
+        id:p.position._id,
         candidates:p.candidates.map(c=>({
           image:c.image,
           ...c.student,
           id:c.student._id,
-          position: p.position
+          position: p.position._id
         }))
       }))
     })

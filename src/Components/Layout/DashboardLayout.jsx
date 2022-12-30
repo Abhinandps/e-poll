@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import bubbleIcon from "../../Assets/Icons/bubble.svg"
 import arrow from "../../Assets/Icons/toggleArrow.svg"
 import menuBar from "../../Assets/Icons/menuBar.svg"
@@ -16,12 +16,18 @@ const DashboardLayout = ({ userData, data }) => {
     const [open, setOpen] = useState(false);
     const [sidebar, setSideBar] = useState(false);
 
+    const location = useLocation();
     const onLogout =()=>{
         localStorage.removeItem("token");
         localStorage.removeItem("userType");
         navigate("/");
     }
-
+    const capitalize = (a)=>a[0].toUpperCase()+a.slice(1)
+    const getTitle = ()=>{
+        return location.pathname.split("/")[3]
+        .split("-").map(a=>capitalize(a))
+        .join(" ")
+    }
     return (
         <>
             <div className='dashboard-container'>
@@ -31,7 +37,7 @@ const DashboardLayout = ({ userData, data }) => {
 
                     <div className="topbar-title-section">
                         <img src={menuBar} alt="" onClick={() => { setSideBar(true) }} />
-                        <h1>Dashboard</h1>
+                        <h1>{getTitle()}</h1>
                     </div>
 
                     <div className="topbar-userDetails-section">
