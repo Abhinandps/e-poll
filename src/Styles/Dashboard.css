@@ -1,6 +1,7 @@
 .dashboard-main {
     padding: 30px;
     background-color: #EEEEEE;
+    height: 100%;
 }
 
 .dashboard-main h2 {

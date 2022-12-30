@@ -149,7 +149,7 @@ const AddCandidates = ({ goBack, candidatesList, addCandidate, removeCandidate, 
                     />
                     <Select options={[]} placeholder="Choose" />
                 </div>
-                <Button type="button" title="Publish Now" onClick={()=>
+                <Button type="button" title="Publish Now" onClick={()=>{
                 saveToDraft("ongoing")
                 setShow(false)
                 }

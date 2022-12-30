@@ -10,7 +10,7 @@ const Voter = () => {
     const getElection = async()=>{
         const res =await apiCall("/voter/voter-election")
         setData(
-            res.Data.positions.map(p=>({
+            res.data.positions.map(p=>({
                 id:p.id,
                 position: p.position.name,
                 candidates:p.candidates.map(c=>({
