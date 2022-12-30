@@ -14,7 +14,8 @@ const CreateElection = () => {
     setPositionList(res.data.college.positions.map(d => ({ ...d, id: d._id })))
     const elections = await apiCall("/admin/get-elections");
     if(!elections.data?.length)return
-    const election = elections.data[0];
+    const election = elections.data.filter(({status})=>status === 'draft')?.[0];
+    if(!election)return
     setData({
       ...data,
       name: election.name,

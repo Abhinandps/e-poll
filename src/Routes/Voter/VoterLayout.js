@@ -16,7 +16,7 @@ const VoterLayout = () => {
         avatar: avatar
     });
     const getprofile =async () => {
-        const res= await apiCall("/voter/profile");
+        const res= await apiCall("/voter/get-profile");
         setUserData({
             ...userData,
             name: res.data.name,

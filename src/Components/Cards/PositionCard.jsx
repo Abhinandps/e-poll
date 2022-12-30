@@ -2,7 +2,9 @@ import React from 'react'
 import CandidatesCard from "../../Components/Cards/CandidatesCard"
 const PositionCard = ({
     position,
-    candidates}
+    candidates,
+    addVote
+}
     ) =>{
     return(
         <div className="election-position-card">
@@ -11,7 +13,7 @@ const PositionCard = ({
         </div>
          <div className="election-candidates-list">
             {candidates.map(candidate=>(
-                <CandidatesCard{...candidate} key={candidate.rollno}/>
+                <CandidatesCard addVote={addVote} {...candidate} key={candidate.rollno}/>
                 ) 
                 )}            
         </div>

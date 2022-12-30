@@ -149,9 +149,9 @@ const AddCandidates = ({ goBack, candidatesList, addCandidate, removeCandidate, 
                     />
                     <Select options={[]} placeholder="Choose" />
                 </div>
-                <Button type="button" title="Publish Now" onClick={()=>
-                saveToDraft("ongoing")
-                setShow(false)
+                <Button type="button" title="Publish Now" onClick={()=>{
+                     saveToDraft("ongoing")
+                     setShow(false)
                 }
                    }
                 />

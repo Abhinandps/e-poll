@@ -6,11 +6,12 @@ import Button from '../../Components/Form/Button'
 const Voter = () => {
     
     const [data,setData] = useState([]) 
-      
+    const [votingData,setVotingData] = useState({});  
     const getElection = async()=>{
         const res =await apiCall("/voter/voter-election")
+        if(!res.data?.positions) return;
         setData(
-            res.Data.positions.map(p=>({
+            res.data.positions.map(p=>({
                 id:p.id,
                 position: p.position.name,
                 candidates:p.candidates.map(c=>({
@@ -19,15 +20,43 @@ const Voter = () => {
                     semester:c.student.batch,
                     rollno:c.student.registerNumber,
                     image:c.image,
-                    id:c._id
+                    id:c._id,
+                    position: p.position._id,
+                    candidate: c.student._id
                 }))
                 
             }))
         );
+
+        setVotingData({
+            election: res.data._id,
+            votes: res.data?.positions.map(p=>({
+                position: p.position._id,
+                candidate: "" ,          
+             }))
+        });
     }
+
+    const addvote = (position,candidate) =>{
+        setVotingData(prev=>({
+            ...prev,
+            votes: prev.votes.map(
+                p=>({
+                    position: p.position,
+                    candidate: p.position === position? candidate: p.candidate ,          
+                 })
+            )
+        }))
+    }
+    
     useEffect(()=>{
         getElection()
     },[])
+    
+    const submitVote = async ()=>{
+        const res = await apiCall("/voter/add-vote","POST",votingData)
+        console.log(res);
+    }
 
     return (
         <div className="dashboard-main">
@@ -41,9 +70,10 @@ const Voter = () => {
             </div>
             <div className="election-view-section">
                 {data.map(position =>
-                    <PositionCard {...position} key={position.position} />
+                    <PositionCard addvote={addvote} {...position} key={position.position} />
                 )
                 }
+                <Button type="button" width="200px" title="Submit" onClick={submitVote}/>
             </div>
         </div>
     )

@@ -7,7 +7,11 @@ const CandidatesCard = (
     department,
     semester,
     rollno,
-    votes,img,winStatus}
+    votes,img,winStatus,
+    addVote,
+    position,
+    candidate
+}
 ) =>{
    
     return (
@@ -20,7 +24,7 @@ const CandidatesCard = (
 
                 <div className="candidate-select">
                     <label>select</label>
-                    <input type="radio" />
+                    <input type="radio" onClick={()=>addVote(position,candidate)} />
                 </div>
             }
 
