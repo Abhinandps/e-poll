@@ -114,9 +114,10 @@ const CreateElection = () => {
     }))
   }
   
-  const saveToDraft = async ()=>{
+  const saveToDraft = async (status)=>{
     const payload = {
       name: data.name,
+      status,
       positions: data.positions.map(d=>({
         position: d.id,
         candidates: d.candidates.map(c=>({

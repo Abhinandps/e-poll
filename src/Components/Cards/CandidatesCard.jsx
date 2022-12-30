@@ -1,11 +1,15 @@
+
 import ProgressBar from "../GraphicalElelments/ProgressBar/ProgressBar"
 import avatar from "./../../Assets/Images/avatar.png"
+
 const CandidatesCard = (
-    { name,
-        department,
-        semester,
-        rollno, votes,img,winStatus}
-) => {
+   {name,
+    department,
+    semester,
+    rollno,
+    votes,img,winStatus}
+) =>{
+   
     return (
         <div className={ winStatus ? 'candidates-win-card' : 'candidates-card'}>
             <div className="candidates-avatar">
@@ -13,6 +17,7 @@ const CandidatesCard = (
             </div>
 
             {votes ? '' :
+
                 <div className="candidate-select">
                     <label>select</label>
                     <input type="radio" />
