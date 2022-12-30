@@ -109,3 +109,22 @@ justify-content: space-between;
 
 
 }
+
+@media screen and (max-width:992px){
+    .topContainer{
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+    margin-left: 40px;
+    }
+    .itemContainer1,.itemContainer2,.itemContainer3,.itemContainer4{
+        margin: .7rem;
+        
+    }
+  
+}
+@media screen and (max-width:1110px){
+.bottom{
+    flex-direction: column;
+  }
+}
